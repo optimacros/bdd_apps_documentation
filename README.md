@@ -1,4 +1,4 @@
-#  Документация по скриптам 1.0 [Optimacros](https://optimacros.ru/)
+#  Документации по DBB-тестированию в [AM](https://www.youtube.com/watch?v=XRLPB1mWmbw) для [Optimacros](https://optimacros.ru/)
 
 0. [Требования к написанию DBB тестов](prerequisities.md)
 1. [Настройка таска в AM и подготовка к работе](settingsTask.md)
