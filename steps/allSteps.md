@@ -12,6 +12,10 @@
 
 Шаг для клика по одному селектору с аргументом или если не указывать аргумент, то шаг нажмет на первый селектор в DOM дереве
 
+2) > When I click on "Row Header(19:-1)" with SHIFT
+
+Шаг может кликнуть по чему-то с зажатой клавишей
+
 
 2) > When I hover on "Header Menu Element(Dimensions)"
 
@@ -220,7 +224,6 @@ Then I see that "Row Header(Балтика)" doesn't exist
 
 
 ### Буфер обмена
-
 28) > Then I see that clipboard contains "100"
 
 > Then I don't see that clipboard contains "100"
@@ -280,6 +283,15 @@ And I fill cells from the clipboard
 > | 0.1    | 0.2    | 0.3    | 0.4    |
 
 Заполняет буфер в виде таблицы из написанного нами контейнера
+
+
+36) > And The module is filled with "f:TestModuleData.csv"
+
+Шаг вставит из csv файла данные в грид от начала координат колонка = 0, строка = 0
+<!-- Файл импорта должен находиться в папке Fixtures -->
+
+
+
 
 ## Продолжаем
 33) > And I save the current view as "Test View Tab"
@@ -386,10 +398,66 @@ And I fill cells from the clipboard
 
 Наберет текст *Total Company* в клетке на пересечении колонки *Регионы2* и строки с позицией *4*
 
+53) > Then I see that property "О1.2" of element "Text col with data" is equal to "444"
 
-53) > And I have just created module "TestModule"
+Проверка проперти на пересечении Строки и Колонки.
+- Первый аргумент О1.2 - это название колонки? 
+- Text col with data - название строки. 
+- 444 - данные в ячейке
+
+54 )
+> Then I see elements in the grid:
+>| 0:-1 | cube 1 | 21   | 17 |
+>| 1:-1 | cube 2 | О1.2 | В2 |
+
+Шаг проверяет данные в гриде, с указанием номера строки и данных в колонках. Колонки отбиваются друг от друга символом **|** 
+Есть возможность не указывать значения клеток **|  |**
+
+55)
+> Then I don't see elements in the grid:
+>| 0:-1 | Line Item 1 |
+>| 1:-1 | Line Item 2 |
+
+Шаг проверит отсуствие элементов в гриде.
+
+
+56) > And I drag "Dnd Element(Months)" and drop it **into** "Dnd Zone(Rows)"
+
+С помощью этого шага возможно перетаскивать определенные DND элементы на другие зоны или элементы
+
+> And I drag "Dnd Element(Заводы)" and drop it **before** "Dnd Element(Cubes)"
+
+Можно перенести над каким-то элементом
+
+> And I drag "Dnd Element(Заводы)" and drop it **after** "Dnd Element(Cubes)"
+
+Можно перенести под какой-то элемент
+
+
+57) > When I drop file "E2E Test Model.zip" to the "Drive Landing"
+> When I drop file "Nomenklatura.xlsx" to the "Grid"
+
+Шаги для переноса файлов из папки Fixtures в наш грид или еще какую-то область. Это позволяет сделать импорт подготовленного файла
+
+58) > Then I compare "Grid Container" with "conditional-formatting-for-row-where-exist-cell-with-preset.png"
+
+Шаг для сравнения эталонного скриншота с тем скриншотом который будет делаться при прогоне теста.
+Сам шаг довольно специфический. Есть много нюансов, раскажу несколько из них!
+Чтобы сделать скриншот эталонный, нужно прогнать сам тест, забрать сделанный скриншот из репорта, положить его в проект в папку screanshots и в следующих запусках теста, шаг уже будет сравнивать один скриншот со вторым.
+
+59) > And I set cursor position [2] to input "Formula Input"
+
+Шаг установит текстовый курсор ввода к указанному по порядку символу в формульной строке
+
+60) > And I see that cursor position of input "Formula Input" is equal to [5]
+
+соотвественно можно проверить с помощью этого шага у какого символа по порядку находится текстовый курсор ввода
+
+) > And I have just created module "TestModule"
 
 Создание мультикуба с именем. Правда без возможности выбора измерений.
+
+
 
 
 
@@ -435,10 +503,34 @@ And I see that "Global Loader" doesn't exist for a long time
     When I set "Time Period coll empty" to "Feb 19" for element "В2" without update cell
     When I type "66000000" into property "Стоимость производства" of element "Jan 17" without update checking
 
+    And I see that size prop "width" of element "Col Header(Line Item Text)" is [81] Ширина колонки
+
+    Then I see that css prop "left" of element "Selection Body Layout" is [243px] - Проверка пропертри у css свойства элемента
+
+    And I see that grid has right spaces - Проверка того что в конце грида снизу или справа есть отступ
+    Then I see that grid has down spaces - Проверка того что в конце грида снизу или справа есть отступ
+
+    And I drag "Zoom Slider" and see value [1] - Шаг для увеличения или уменьшения размера приложения в настройках
+
+And I set viewport width [1366] and height [620] - Если понадобилось запустить тест с другим размером браузера. Дефолтно запускается с 1920x1080
+
+When I stretch element "Col Header(-2:4|Line Item 3)" to the "right" by [48] - Шаг для растягивания элементов в нужном направлении на нужное колличество px
+
+    Then I see that height of element "Constraints Formula Line" is equal to [213] - Проверка высоты поля ввода в гриде Optimizer
+
+
+
+
+
+
+
 
  > And I paste after hash in url "eyJ0eXBlIjoiTXVsdGljdWJlc0RhdGFCdWlsZGVyVGFiIiwicGFyYW1zIjp7InRpdGxlIjoiTXVsdGljdWJlcyIsImFjdGl2ZVRhYiI6MH19"
 
 Шаг вставляет дополнительный хеш в адресную строку браузера после ID модели и символа # - Этот шаг нужен для тестирования роутинга
+    
+    When I remove hash from url - Шаг удалит хэш
+
     
 
 
