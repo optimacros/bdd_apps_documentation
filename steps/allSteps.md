@@ -1,7 +1,5 @@
 # Список всех шагов
 
-## Комлпексные шаги:
-
 1) > When I click on "Header Menu Element(1. Товарные группы)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Lists)"
 
 Шаг открывает справочник который находится в иерархии меню. Для этого мы должны указать пункт меню Dimensions. В шаге произойдет фокусировка на этот элемент приложения. Почему именно на пункт меню сверху? Потому как Header Menu Element это прописанный селектор, название интерпритировано на человеческий язык, а внутри селектора лежит идентификтор по которому собественно и происходит вызов элемента.. В данном случае это класс ```HeaderMenu__MenuItem```
@@ -14,23 +12,28 @@
 
 Шаг для клика по одному селектору с аргументом или если не указывать аргумент, то шаг нажмет на первый селектор в DOM дереве
 
+
 2) > When I hover on "Header Menu Element(Dimensions)"
 
 Шаг наводящий курсор мыши на указанный элемент
+
 
 3) > When I type "20" into "Input(fontSize)"
 
 Шаг напечатает в поле ввода с атрибутом *Name* число *20*
 Узнать атрибут Name у Input можно инспектором кода у браузера
 
+
 4) > When I click by coordinates "275:390"
  > When I hover by coordinates "275:390"
 
 Шаг наведет курсор или кликнет по координатам приложения, если по этой координате будет какой-то элемент, то произойдет какое-то событие. Чаще всего этот шаг применяется для клика по нужному элементу в графике. Дело в том что в графиках тяжело привязаться к элементу и сделать с ним что-то. Ну а к самим настройкам графика мы можем обратиться, многие селекторы уже прописаны. 
 
+
 5) > When I type "Test"
 
 Шаг наберет указанный текст. Правда перед этим шагом нужно выбрать место где набередтся этот текст. Мы можем например кликнуть этим шагом *And I click on "Input(newItems)"*
+
 
 6) > And I type into "Input(entityCount)":
       """
@@ -38,6 +41,7 @@
       """
 
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
+
 
 8) > And I press "ENTER"
 
@@ -62,8 +66,10 @@
 
 9) 
 > And I see that "Modal" exists
-> And I see that "Row Header(Балтика)" exists```
-> And I see "Grid Cell Editor"```
+
+> And I see that "Row Header(Балтика)" exists
+
+> And I see "Grid Cell Editor"
 
 Есть шаги по проверке существования элементов - селекторов в приложении.. Применяются они для того чтобы убедиться в том, появилось что либо после како-нибудь события.
 Альтернативный шаг в следущем пункте
@@ -82,7 +88,8 @@
 - ```And I see that "Formula Input" is focused```
 Самый редко используемый шаг на проверку фокуса на элементе.
 
-10)  > And I see that "Row Header(Балтика)" doesn't exist
+
+10) > And I see that "Row Header(Балтика)" doesn't exist
 Шаг проверяет что строки с таким то именем нет в гриде.. Данный пример говорит о том, что шаг мы проверяем элемент что он отсуствет после применения функционала Hide или другого скрытия.
 Важно перед таким шагом проверять существование других элементов или завершение загрузки грида
 ```
@@ -98,70 +105,94 @@ Then I see that "Row Header(Балтика)" doesn't exist
 ```
 
 ```Then I don't see "Grid Cell Editor"```
+
 Так же есть похожий шаг по проверке остуствия селектора, отличий с *doesn't exist* нет
 
 
-11) ```And I see that "Card Of Dashboards(Cube МК4 Стандартные заказы и Номенклатура 4) > Grid Cell(2:1, 99)" exists for a long time```
+11) > And I see that "Card Of Dashboards(Cube МК4 Стандартные заказы и Номенклатура 4) > Grid Cell(2:1, 99)" exists for a long time
+
 Специфичный шаг, нужный для проверки сущесовования элемента но с увеличенным таймаутом самого шага.. В стандартных шагах заложен таймаут в 60 секунд, по истечению этого времени шаг упадет. Т.е. не дождется элемента и сценарий остановится и продолжится другой сценарий который вероятно тоже упадет так как в предыдущем сценарии не выполнились все заложенные действия
 
-12) ```And I see that Grid exists and loaded```
+
+12) > And I see that Grid exists and loaded
+
 Шаг проверят загрузку грида и отсуствие лоадера. Часто применяется после открытия нового грида или изменения состояния грида на котором находимся.. Когда мы заведомо знаем что грид должен загрузиться, то применяем этот шаг. Можно не применять его если мы проверяем какие-то элементы в гриде. Например мы вошли в новый грид, проверили существование колонки с определенным названием или строки и это гарантирует нам что грид загружен, иначе элементов видно небыло бы без загрузки грида.
 
-13) ```And I see that Grid exists and loaded in [15] seconds```
+
+13) > And I see that Grid exists and loaded in [15] seconds
+
 Шаг выполняет провергу загрузки грида в течении 15 секунд. Если за 15 секунд грид не загрузился, то шаг упадет. Выставить мы можем время в пределах 60 секунд
 
-14) ```Then I see text "-1,234.56789" in "Modal > Sample Value"```
+
+14) > Then I see text "-1,234.56789" in "Modal > Sample Value"
+
 Шаг для проверки текста у определенного селектора или у контейнера.
 Представим что у нас есть модальное окно и нам нужно проверить часть текста `-1,234.56789` в этом нам и поможет наш шаг
 
-15) ```And I don't see "Chart" with text "308.2K"```
+
+15) > And I don't see "Chart" with text "308.2K"
+
 Шаг проверит отсуствие текста у селектора
 
 
-16) ```When I click on text "Клин" in "Filters"```
+16) > When I click on text "Клин" in "Filters"
+
 Шаг предназначеный для клика по тексту в каком-то селекторе.
 В данном примере произошел клик по фильтру с текстом Клин
+
 *And I click on text "003" in "Tree Menu Element"* а в этом случае клик по тексту в открвшемся выпадающем списке фильтра.
+
 *And I click on text "Apply & Save" in "Modal"* или когда есть недопустимые символы для других шагов, этот шаг сможет кликнуть на кнопку с названием Apply & Save в модальном окне
 
-17) 
-```When I insert "Subsets" elements at the "Start":
+
+17) > When I insert "Subsets" elements at the "Start":
       """
       Test Half Subset 1
       Test Half Subset 2
-      """```
+      """
 
 Шаг выполяющий несколько итераций. Кликает на кнопку Add (название кнопки, например Subsets) with Names - это множественный именованный инсерт.
 Далее вводит название элементов в поле Textarea, выбирает позицию Start в выпадающем списке и нажимает кнопку Ok.
 Если делать Named Insert справочника с позицией After, то шаг будет выглядеть так - *When I insert "Lists" elements at the "After":*
 
-18) ```And I insert "2" elements type of "Elements" at the "Start"```
+
+18) > And I insert "2" elements type of "Elements" at the "Start"
 Шаг выполяющий несколько итераций. Кликает на кнопку Add (название кнопки, например Subsets) - Это множественный неименованный инсерт.
 Далее вводит колличество элементов в input, выбирает позицию Start в выпадающем списке и нажимает кнопку Ok.
 
-19) ```And I set value "Big multicube" to input "Module Name"```
+
+19) > And I set value "Big multicube" to input "Module Name"
 Шаг введет текст *Big multicube* в инпут у которого атрибут *Name* = Module Name
 
-20) ```And I see value "LAYS" in "Search Input" input```
+
+20) > And I see value "LAYS" in "Search Input" input
 Проверяет value у инпута с названием Search Input
 
-21) ```Then I see empty value in "Formula Input"```
+
+21) > Then I see empty value in "Formula Input"
 Проверят что нет никаких данных в инпуте Formula Input
 
-22) ```And I see that the "Grid Context Menu" is open```
+
+22) > And I see that the "Grid Context Menu" is open
+
 Проверка того что контекстное меню вызванное райт кликом по гриду, открылось!
 *When I right click on "Col Header(-1:2)"*
 *And I see that the "Grid Context Menu" is open*
 
 Так же можно проверить закрыто ли контекстное меню:
+
 ```Then I see that the "Context Menu" is closed```
 
 ### Скролл
-23) ```And I scroll vertical scroller to down``` 
+23) > And I scroll vertical scroller to down
+
 Вертикальный скролл грида проскролится в самый низ. Так-же можно проскролить этим шагом к началу или середине грида - *top* и *middle*
 
-24) ```When I scroll horizontal scroller to end``` 
+
+24) > When I scroll horizontal scroller to end
+
 Горизонтальный скролл в гриде. Можно в начало и середину страницы проскролить - *start* или *middle*
+
 
 25) ```And I scroll "vertical" "Modal > Dnd Zone(Free) > scroller" by "350" pixels```
 Скролл вертикальный на 350px в модальном окне DND зоны с названием Free
@@ -169,9 +200,11 @@ Then I see that "Row Header(Балтика)" doesn't exist
 Аналогично вертикальному можно сделать и горизонтальный скролл, правда в этом примере у карточки дашборда с определенным названием на 300px.
 Сама карточка дашборда и скроллер должен попадать в зону видимости, иначе шаг не сможет проскролить.
 
+
 26) ```And I see that "horizontal" scroller scrolled by "400" pixels```
 ```And I see that "vertical" scroller scrolled by "192" pixels```
 Шаги по проверке того, где находится скролл по горизонтали и вертикали в гриде.
+
 
 27) ```And I see that "horizontal" "Card of Dashboards(big list) > scroller" scrolled by "400" pixels```
 ```And I see that "vertical" "Modal > Tree Menu > scroller" scrolled by "104" pixels```
