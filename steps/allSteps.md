@@ -194,35 +194,47 @@ Then I see that "Row Header(Балтика)" doesn't exist
 Горизонтальный скролл в гриде. Можно в начало и середину страницы проскролить - *start* или *middle*
 
 
-25) ```And I scroll "vertical" "Modal > Dnd Zone(Free) > scroller" by "350" pixels```
+25) > And I scroll "vertical" "Modal > Dnd Zone(Free) > scroller" by "350" pixels
+
 Скролл вертикальный на 350px в модальном окне DND зоны с названием Free
-```And I scroll "horizontal" "Card of Dashboards(5.2 Вид РИМ) > scroller" by "300" pixels```
+
+
+ > And I scroll "horizontal" "Card of Dashboards(5.2 Вид РИМ) > scroller" by "300" pixels
+
 Аналогично вертикальному можно сделать и горизонтальный скролл, правда в этом примере у карточки дашборда с определенным названием на 300px.
 Сама карточка дашборда и скроллер должен попадать в зону видимости, иначе шаг не сможет проскролить.
 
 
-26) ```And I see that "horizontal" scroller scrolled by "400" pixels```
-```And I see that "vertical" scroller scrolled by "192" pixels```
+26) > And I see that "horizontal" scroller scrolled by "400" pixels
+ > 
+ And I see that "vertical" scroller scrolled by "192" pixels
+
 Шаги по проверке того, где находится скролл по горизонтали и вертикали в гриде.
 
 
-27) ```And I see that "horizontal" "Card of Dashboards(big list) > scroller" scrolled by "400" pixels```
-```And I see that "vertical" "Modal > Tree Menu > scroller" scrolled by "104" pixels```
+27) > And I see that "horizontal" "Card of Dashboards(big list) > scroller" scrolled by "400" pixels
+
+> And I see that "vertical" "Modal > Tree Menu > scroller" scrolled by "104" pixels
+
 В этих шагах проверяется конкректный скролл. 
 
 
 ### Буфер обмена
-28) ```Then I see that clipboard contains "100"```
-```Then I don't see that clipboard contains "100"```
+
+28) > Then I see that clipboard contains "100"
+
+> Then I don't see that clipboard contains "100"
+
 Проверка значений находящихся в буфере обмена или отсуствия значения в буфере
 
-29) ```And I see that clipboard is empty```
+29) > And I see that clipboard is empty
 Проверка того что буфер обмена пуст
 
-30) ```Given Clipboard is empty```
+30) > Given Clipboard is empty
 Очистка буфера.
 
-31) ```And I copy the selection to the clipboard```
+31) > And I copy the selection to the clipboard
+
 Шаг копируте в буфер выделенный текст.. 
 Вот несколько примеров:
 ```
@@ -233,6 +245,7 @@ And I see that clipboard contains "333"
 And I see that clipboard contains "444"
 ```
 В этом сценарии кликаем на строчку и копируем ее.. выделяются и ячейки этой строки, оттуда и взялись данные в буфере 333 и 444
+
 ```
 When I click on "Grid Cell(3:0)"
 And I press "END" with "SHIFT" with "ALT"
@@ -240,93 +253,144 @@ And I copy the selection to the clipboard
 ```
 В этом шаге копируются сразу много выделенных ячеек
 
-32) ```And I fill cells from the clipboard```
-Шаг вставляет данные из буфера в выделенную область.
+32) > And I fill cells from the clipboard
 
+Шаг вставляет данные из буфера в выделенную область.
 ```
 And I click on "Grid Cell(79:1)"
 And I click on "Grid Cell(103:1)" with SHIFT
 And I fill cells from the clipboard
 ```
 
-Есть еще специфичный похожий шаг
-```And I fill cells from the clipboard without waiting```
+*Есть еще специфичный похожий шаг:*
+ > And I fill cells from the clipboard without waiting
+
 Он служит для таких же целей, но без внутренней проверки ожидания.
 Применяется в связке с функционалом *Apply By Confirmation (ABC)*
 
-33) ```And I paste data from the clipboard```
+33) > And I paste data from the clipboard
 Шаг по вставке в выделенную область данных из буфера
 
-34) ```And I fill the clipboard from "f:TestEditableModuleData.csv"```
+34) > And I fill the clipboard from "f:TestEditableModuleData.csv"
 Заполняет буфер обмена из csv файла
 
-35)  ```When I fill the clipboard:
-| 100    | 200    | 300    | 400    |
-| Text 1 | Text 2 | Text 3 | Text 4 |
-| 0.1    | 0.2    | 0.3    | 0.4    |```
+35)> When I fill the clipboard:
+> | 100    | 200    | 300    | 400    |
+> | Text 1 | Text 2 | Text 3 | Text 4 |
+> | 0.1    | 0.2    | 0.3    | 0.4    |
 
 Заполняет буфер в виде таблицы из написанного нами контейнера
 
 ## Продолжаем
-33) ```And I save the current view as "Test View Tab"```
+33) > And I save the current view as "Test View Tab"
+
 Сохранение новой вьюхи МК. Для этого нужно находиться в нужном МК и шаг Нажмет на кнопку View в toolbar, выберет в выпадающем списке пункт Save As, в появившемся модальном окне запишет название новой вьюхи, все чекбоксы останутся дефолтными и кликнет на кнопку OK
 
-34) ```And I delete view "Test View Tab"```
+
+34) > And I delete view "Test View Tab"
+
 Удаление вьюхи в которой нужно находится.. Шаг похож на создание вьюхи.. Тоже нажмет кнопку View > Manage Views, в модалке выберется наша вьюха и нажмется кнопка Delete и Ok
 
-35) ```When I change filter "cube 0" to "cube 2"```
+
+35) > When I change filter "cube 0" to "cube 2"
+
 Смена фильтра в МК, КТ или на дашборде . В общем первый всретившийся фильтр в DOM дереве изменится с *cube 0* на *cube 2*
 Находясь на Дашборде нужно учитывать что там может быть много одинаковых фильтров и шаг поменяет фильтр у первого встретившегося с указанным названием. Менять фильтра у карточек лучше другими шагами: *When I click on "Card Of Dashboards(Cube МК1 с Заказами) > Filter(Forecast)"*
 
-36) ```And I open module "Editable Module"``` - Открывает МК 
-```Then I close module "Basic Module"``` - Закрывает МК
 
-37) ```And I open cell dialog with position "2:2"```
+36) > And I open module "Editable Module"
+
+Открывает МК 
+ 
+ > Then I close module "Basic Module"
+ 
+Закрывает МК
+
+
+37) > And I open cell dialog with position "2:2"
+
 Шаг служит для клика по селектору *cellPreEditor* у определенной ячейки,  т.е. нажмет на ячейку и в ней нажмет на три точки если они есть
 
-38) ```When I call the manual backup with hot keys```
+
+38) > When I call the manual backup with hot keys
+
 Создание бекапа, в этом шаге заложено нажатие клавиш CTRL + S
 
-39) ```When I call recalculate model```
+
+39) > When I call recalculate model
 В шаге заложено нажатие клавиши F9. Активирует *Manual Recalculation Model Mode*
 
 
 ### Шаги для Drive Landing
-40) ```And I create new model with name "Model 1"```
+40) > And I create new model with name "Model 1"
+
 Создание модели с именем Model 1 находясь в Drive Landing
 
-41) ```And I create new folder with name "Folder 1"```
+
+41) > And I create new folder with name "Folder 1"
+
 Создание папки находясь в Drive Landing
 
-42) ```When I delete "E2E Test Model" model```
+
+42) > When I delete "E2E Test Model" model
+
 Удаление модели находясь в Drive Landing и в нужной месте расположения модели
 
-43) ```When I delete "Folder Renamed" folder```
+
+43) > When I delete "Folder Renamed" folder
+
 Удаление папки находясь в Drive Landing и в нужной месте расположения модели
 
-44) ```When I rename "test m. f. one" model to "2 test"```
+
+44) > When I rename "test m. f. one" model to "2 test"
+
 Переименовываем модель
 
-45) ```When I rename "Folder 1" folder to "Folder Renamed"```
+
+45) > When I rename "Folder 1" folder to "Folder Renamed"
+
 Переименовываем папку
 
-46) ```And I copy "E2E Test Model" model```
+
+46) > And I copy "E2E Test Model" model
+
 Создание копии модели. В имени скопированной модели будет присутствовать уникальный хэш
 
-47) And I delete "Line Item 1"
+
+47) > And I delete "Line Item 1"
+
 Находясь в гриде в котором можно удалить строку, шаг выделит нужный элемент и удалит его через кнопку в тулбаре
 
-48) ```And I clear value in "Input(newName)"```
+
+48) > And I clear value in "Input(newName)"
+
 Очистка данных в указанном Input
 
-49) ```And I see "Modal > Input(dataType)" with attribute value equal "List"```
+
+49) > And I see "Modal > Input(dataType)" with attribute value equal "List"
+
 Проверка атрибута у определенного Input
 
-50) ```And I see "Grid Cell Editor" with property value equal "VCAR_01_01"```
+
+50) > And I see "Grid Cell Editor" with property value equal "VCAR_01_01"
+
 Проверка проперти у определенного элемента
 
-51) ```Then I set "Enumerated List" to "E-Property" for element "Display Name Property"```
+
+51) > Then I set "Enumerated List" to "E-Property" for element "Display Name Property"
+
 Выбор определенного пункта в выпадающем списке на пересечении строки и колонки. Первый атрибут это Колонка, второй это Самое значение в выпадающем списке, а третий атрибут это Строка
+
+
+52) > And I type "Total Company" into property "Регионы2" of row "4"
+
+Наберет текст *Total Company* в клетке на пересечении колонки *Регионы2* и строки с позицией *4*
+
+
+53) > And I have just created module "TestModule"
+
+Создание мультикуба с именем. Правда без возможности выбора измерений.
+
 
 
 
@@ -368,6 +432,13 @@ And I see that "Global Loader" doesn't exist for a long time
 
     And I submit the form - Шаг кликает по кнопке Sabmit
 
+    When I set "Time Period coll empty" to "Feb 19" for element "В2" without update cell
+    When I type "66000000" into property "Стоимость производства" of element "Jan 17" without update checking
+
+
+ > And I paste after hash in url "eyJ0eXBlIjoiTXVsdGljdWJlc0RhdGFCdWlsZGVyVGFiIiwicGFyYW1zIjp7InRpdGxlIjoiTXVsdGljdWJlcyIsImFjdGl2ZVRhYiI6MH19"
+
+Шаг вставляет дополнительный хеш в адресную строку браузера после ID модели и символа # - Этот шаг нужен для тестирования роутинга
     
 
 
