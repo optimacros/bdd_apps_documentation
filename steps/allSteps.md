@@ -6,52 +6,65 @@
 
 Шаг открывает справочник который находится в иерархии меню. Для этого мы должны указать пункт меню Dimensions. В шаге произойдет фокусировка на этот элемент приложения. Почему именно на пункт меню сверху? Потому как Header Menu Element это прописанный селектор, название интерпритировано на человеческий язык, а внутри селектора лежит идентификтор по которому собественно и происходит вызов элемента.. В данном случае это класс ```HeaderMenu__MenuItem```
 
- > When I click on "Header Menu Element(Lists)" in "Header Menu Element(Dimensions)"
+ ```When I click on "Header Menu Element(Lists)" in "Header Menu Element(Dimensions)"```
+
 Этот шаг работает по тому же принципу что и шаг выше. Но сдесь двойная вложенность
 
- > When I click on "Header Menu Element(Dimensions)" 
+ ```When I click on "Header Menu Element(Dimensions)"```
+
 Шаг для клика по одному селектору с аргументом или если не указывать аргумент, то шаг нажмет на первый селектор в DOM дереве
 
 2) > When I hover on "Header Menu Element(Dimensions)"
+
 Шаг наводящий курсор мыши на указанный элемент
 
 3) > When I type "20" into "Input(fontSize)"
+
 Шаг напечатает в поле ввода с атрибутом *Name* число *20*
 Узнать атрибут Name у Input можно инспектором кода у браузера
 
 4) > When I click by coordinates "275:390"
  > When I hover by coordinates "275:390"
+
 Шаг наведет курсор или кликнет по координатам приложения, если по этой координате будет какой-то элемент, то произойдет какое-то событие. Чаще всего этот шаг применяется для клика по нужному элементу в графике. Дело в том что в графиках тяжело привязаться к элементу и сделать с ним что-то. Ну а к самим настройкам графика мы можем обратиться, многие селекторы уже прописаны. 
 
-5) ```When I type "Test"```
+5) > When I type "Test"
+
 Шаг наберет указанный текст. Правда перед этим шагом нужно выбрать место где набередтся этот текст. Мы можем например кликнуть этим шагом *And I click on "Input(newItems)"*
 
-6) ``` And I type into "Input(entityCount)":```
+6) > And I type into "Input(entityCount)":
       """
       2
       """
 
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
 
-8) - ```And I press "ENTER"``` 
+8) > And I press "ENTER"
+
 Шаг нажимает клавишу *Enter* или можно передавать другой аргумент в шаг. Список клавиш - 
 
-- ```And I press "ARROW_DOWN" [15] times```
+ > And I press "ARROW_DOWN" [15] times
+
 Шаг нажимает клавишу *Down* 15 раз. Т.е. шаг может любое колличество раз нажать на нужную нам клавишу
 
-- ```And I press "ARROW_LEFT" with "SHIFT" [9] times```
+ > And I press "ARROW_LEFT" with "SHIFT" [9] times
+
 Шаг нажмет клавишу *Shift* вместе с *Left* 9 раз подряд
 
-- ```When I press "E" with "SHIFT" with "CONTROL"```
+ > When I press "E" with "SHIFT" with "CONTROL"
+
 Соответственно шаг нажмет клавишу *CTRL* c жажатым *Shift* и *E*
 
-- ```When I press "E" with "SHIFT" with "CONTROL" [2] times```
+ > When I press "E" with "SHIFT" with "CONTROL" [2] times
+
 Если понадобится, то можно нажать комбинацию и из трех клавиш несколько раз
 
 
-9) - ```And I see that "Modal" exists``` 
-```And I see that "Row Header(Балтика)" exists```
-```And I see "Grid Cell Editor"```
+9) 
+> And I see that "Modal" exists
+> And I see that "Row Header(Балтика)" exists```
+> And I see "Grid Cell Editor"```
+
 Есть шаги по проверке существования элементов - селекторов в приложении.. Применяются они для того чтобы убедиться в том, появилось что либо после како-нибудь события.
 Альтернативный шаг в следущем пункте
 
@@ -69,7 +82,7 @@
 - ```And I see that "Formula Input" is focused```
 Самый редко используемый шаг на проверку фокуса на элементе.
 
-10) ```And I see that "Row Header(Балтика)" doesn't exist```
+10)  > And I see that "Row Header(Балтика)" doesn't exist
 Шаг проверяет что строки с таким то именем нет в гриде.. Данный пример говорит о том, что шаг мы проверяем элемент что он отсуствет после применения функционала Hide или другого скрытия.
 Важно перед таким шагом проверять существование других элементов или завершение загрузки грида
 ```
