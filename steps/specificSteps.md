@@ -29,6 +29,7 @@
 ## 27)    When I stretch element "Col Header(-2:4|Line Item 3)" to the "right" by [48] - Шаг для растягивания элементов в нужном направлении на нужное колличество px
 ## 28)    Then I see that height of element "Constraints Formula Line" is equal to [213] - Проверка высоты поля ввода в гриде Optimizer
 ## 29)    And I see that Grid exists and loaded in [15] seconds
+
     Шаг выполняет провергу загрузки грида в течении 15 секунд. Если за 15 секунд грид не загрузился, то шаг упадет. Выставить мы можем время в пределах 60 секунд
 
 

@@ -47,7 +47,7 @@
 
 ## 7) When I type "Test"
 
-Шаг наберет указанный текст. Правда перед этим шагом нужно выбрать место где набередтся этот текст. Мы можем например кликнуть этим шагом *And I click on "Input(newItems)"*
+Шаг наберет указанный текст. Правда перед этим шагом нужно выбрать место где набередтся этот текст. Мы можем например кликнуть этим шагом - *And I click on "Input(newItems)"*
 
 
 ## 8) And I type into "Input(entityCount)":
@@ -61,7 +61,9 @@ And I type into "Input(entityCount)":
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
 
 
-## 9) And I press "ENTER"
+## 9) And I press ""
+
+> And I press "ENTER"
 
 Шаг нажимает клавишу *Enter* или можно передавать другой аргумент в шаг. Список клавиш - 
 
@@ -82,31 +84,36 @@ And I type into "Input(entityCount)":
 Если понадобится, то можно нажать комбинацию и из трех клавиш несколько раз
 
 
-## 10) 
-> And I see that "Modal" exists
+## 10) And I see that " " exists
+> And I see that "Modal" **exists**
 
 > And I see that "Row Header(Балтика)" exists
 
 > And I see "Grid Cell Editor"
 
 Есть шаги по проверке существования элементов - селекторов в приложении.. Применяются они для того чтобы убедиться в том, появилось что либо после како-нибудь события.
-Альтернативный шаг в следущем пункте
 
-- ```When I see that "Grid Cell(7:0) > Checkbox" is checked```
+Альтернативные шаги следуют далее:
 
-Можно проверять Boolean кнопку на ее состояние, true(is checked) или false(is not checked)
+
+- ```When I see that "Grid Cell(7:0) > Checkbox" **is checked**```
+
+Можно проверять Boolean кнопку на ее состояние, **true**(***is checked***) или **false**(***is not checked***)
 В этом примере у Grid Cell(7:0) есть Checkbox и мы проверяем его состояние
 
-- ```And I see that "Tab Header(Half Years)" is disabled```
 
-Проверка на свойство элемента, disabled или is not disabled
-Вот еще пример *And I see that "Modal > Button(Delete)" is disabled*
+- ```And I see that "Tab Header(Half Years)" **is disabled**```
 
-- ```And I see that "Modal > Tab Header(Basic)" is active```
+Проверка на свойство элемента, **disabled** или **is not disabled**
+Вот еще пример *And I see that "Modal > Button(Delete)" **is disabled**
 
-Првоерка на активность элемента.. например у Табов в приложении есть такое состояние и мы можем проверять таба активна - is active или нет - is not active
 
-- ```And I see that "Formula Input" is focused```
+- ```And I see that "Modal > Tab Header(Basic)" **is active**```
+
+Првоерка на активность элемента.. например у Табов в приложении есть такое состояние и мы можем проверять таба активна - **is active** или нет - **is not active**
+
+
+- ```And I see that "Formula Input" **is focused**```
 
 Самый редко используемый шаг на проверку фокуса на элементе.
 
@@ -209,10 +216,13 @@ When I insert "Subsets" elements at the "Start":
 Удаление вьюхи в которой нужно находится.. Шаг похож на создание вьюхи.. Тоже нажмет кнопку View > Manage Views, в модалке выберется наша вьюха и нажмется кнопка Delete и Ok
 
 
-## 24) > When I change filter "cube 0" to "cube 2"
+## 24) When I change filter "cube 0" to "cube 2"
 
 Смена фильтра в МК, КТ или на дашборде . В общем первый всретившийся фильтр в DOM дереве изменится с *cube 0* на *cube 2*
-Находясь на Дашборде нужно учитывать что там может быть много одинаковых фильтров и шаг поменяет фильтр у первого встретившегося с указанным названием. Менять фильтра у карточек лучше другими шагами: *When I click on "Card Of Dashboards(Cube МК1 с Заказами) > Filter(Forecast)"*
+
+Находясь на Дашборде нужно учитывать что там может быть много одинаковых фильтров и шаг поменяет фильтр у первого встретившегося с указанным названием. Менять фильтра у карточек лучше другими шагами: 
+
+*When I click on "Card Of Dashboards(Cube МК1 с Заказами) > Filter(Forecast)"*
 
 
 ## 25) And I open module "Editable Module"
@@ -242,7 +252,7 @@ When I insert "Subsets" elements at the "Start":
 ## 29) When I call recalculate model
 В шаге заложено нажатие клавиши F9. Активирует *Manual Recalculation Model Mode*
 
-# Продолжаем
+
 ## 30) And I clear value in "Input(newName)"
 
 Очистка данных в указанном Input
@@ -282,6 +292,7 @@ Then I see elements in the grid:
 ```
 
 Шаг проверяет данные в гриде, с указанием номера строки и данных в колонках. Колонки отбиваются друг от друга символом **|** 
+
 Есть возможность не указывать значения клеток **|  |**
 
 ## 37)
@@ -317,8 +328,7 @@ Then I don't see elements in the grid:
 соотвественно можно проверить с помощью этого шага у какого символа по порядку находится текстовый курсор ввода
 
 
-
-
+---
 # Шаги связанные со скролом
 
 ## 41) And I scroll vertical scroller to down
@@ -355,6 +365,7 @@ Then I don't see elements in the grid:
 В этих шагах проверяется конкректный скролл. 
 
 
+---
 # Шаги связанные с буфером
 
 ## 46) Then I see that clipboard contains "100"
@@ -431,7 +442,7 @@ When I fill the clipboard:
 <!-- Файл импорта должен находиться в папке Fixtures -->
 
 
-
+---
 # Шаги используемые на Drive Landing
 
 ## 55) And I create new model with name "Model 1"
