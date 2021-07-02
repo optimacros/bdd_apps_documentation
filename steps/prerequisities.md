@@ -5,5 +5,6 @@
 
 1. Простой тест для [ознакомления](../steps/basicTest.md)
 2. [Список всех шагов](../steps/allSteps.md)
+3. [Специфические шаги](../steps/specificSteps.md)
 
 [Оглавление](../README.md)
