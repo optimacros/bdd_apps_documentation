@@ -41,33 +41,44 @@
 
     
 ## 32) And I set to input "Grid Settings Input" value:
+```JavaScript 
+And I set to input "Grid Settings Input" value:
       """
       { "defaultCellWidth": 90, "defaultCellHeight": 30 }
       """
+```
+
 
 ## 33) Then I see in input "Formula Input" value:
-```"""```
+```JavaScript 
+Then I see in input "Formula Input" value:
+"""
+    =	 100+
+100+
+100
+"""
+```
 
-```    =	 100+```
 
-```100+```
-
-```100```
-
-```"""```
-        
 ## 34) Then I see in element "Grid Cell(2:1)" title:
+```JavaScript 
+Then I see in element "Grid Cell(2:1)" title:
 """
 sdfsdfjsd;lkfjsdlkfjsdlkfj sdfsdfsdfaaaaajkhkjhsdfkljsdhflksdjhfksdljfhksdjfh
 
 sdfsdlkfjsdlkfj lksdjf;sdlkjflkjlksdjf skdfjlsdkfjsd;lfjksdlfj dsfjsdlfkjsdf
 """
+```
+
 
 ## 35) When I insert elements after "Улицы":
+```JavaScript 
+When I insert elements after "Улицы":
       """
       Материалы
       2.1 Регионы
       """
+```
 
 
 ## 36) > When I drop file "E2E Test Model.zip" to the "Drive Landing"

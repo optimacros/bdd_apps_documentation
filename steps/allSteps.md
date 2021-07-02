@@ -51,9 +51,12 @@
 
 
 ## 8) And I type into "Input(entityCount)":
+```JavaScript 
+And I type into "Input(entityCount)":
       """
       2
       """
+```
 
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
 
@@ -154,10 +157,13 @@ Then I see that "Row Header(Балтика)" doesn't exist
 
 
 ## 16) When I insert "Subsets" elements at the "Start":
-      """
-      Test Half Subset 1
-      Test Half Subset 2
-      """
+```JavaScript 
+When I insert "Subsets" elements at the "Start":
+    """
+    Test Half Subset 1
+    Test Half Subset 2
+    """
+```
 
 Шаг выполяющий несколько итераций. Кликает на кнопку Add (название кнопки, например Subsets) with Names - это множественный именованный инсерт.
 Далее вводит название элементов в поле Textarea, выбирает позицию Start в выпадающем списке и нажимает кнопку Ok.
@@ -268,22 +274,22 @@ Then I see that "Row Header(Балтика)" doesn't exist
 - Text col with data - название строки. 
 - 444 - данные в ячейке
 
-## 36)
-> Then I see elements in the grid:
-
->| 0:-1 | cube 1 | 21   | 17 |
-
->| 1:-1 | cube 2 | О1.2 | В2 |
+## 36) Then I see elements in the grid:
+```JavaScript 
+Then I see elements in the grid:
+    | 0:-1 | cube 1 | 21   | 17 |
+    | 1:-1 | cube 2 | О1.2 | В2 |
+```
 
 Шаг проверяет данные в гриде, с указанием номера строки и данных в колонках. Колонки отбиваются друг от друга символом **|** 
 Есть возможность не указывать значения клеток **|  |**
 
 ## 37)
-> Then I don't see elements in the grid:
-
->| 0:-1 | Line Item 1 |
-
->| 1:-1 | Line Item 2 |
+```JavaScript 
+Then I don't see elements in the grid:
+    | 0:-1 | Line Item 1 |
+    | 1:-1 | Line Item 2 |
+```
 
 Шаг проверит отсуствие элементов в гриде.
 
@@ -408,10 +414,13 @@ And I fill cells from the clipboard
 
 Заполняет буфер обмена из csv файла
 
-53)> When I fill the clipboard:
-> | 100    | 200    | 300    | 400    |
-> | Text 1 | Text 2 | Text 3 | Text 4 |
-> | 0.1    | 0.2    | 0.3    | 0.4    |
+## 53) When I fill the clipboard:
+```JavaScript 
+When I fill the clipboard:
+    | 100    | 200    | 300    | 400    |
+    | Text 1 | Text 2 | Text 3 | Text 4 |
+    | 0.1    | 0.2    | 0.3    | 0.4    |
+```
 
 Заполняет буфер в виде таблицы из написанного нами контейнера
 
