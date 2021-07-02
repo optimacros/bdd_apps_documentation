@@ -46,11 +46,15 @@
       """
 
 ## 33) Then I see in input "Formula Input" value:
-"""
-    =	 100+
-100+
-100
-"""
+```"""```
+
+```    =	 100+```
+
+```100+```
+
+```100```
+
+```"""```
         
 ## 34) Then I see in element "Grid Cell(2:1)" title:
 """
