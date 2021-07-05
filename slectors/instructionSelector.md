@@ -9,7 +9,7 @@
 
 Для поиска нужного селектора нужно в браузере инспектором кода кликнуть на нужный вам элемент, выбрать и скопировать в консоли класс и поискать его в [базе селекторов](./selector.md)
 
-![](slectors\screenshots\inspectorAndSearchClass.jpg "Search Class")
+![](./slectors/screenshots/inspectorAndSearchClass.jpg "Search Class")
 
 
 # [СЕЛЕКТОРЫ](./selector.md)
