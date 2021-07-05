@@ -295,7 +295,7 @@ Then I see elements in the grid:
 
 Есть возможность не указывать значения клеток **|  |**
 
-## 37)
+## 37) Then I don't see elements in the grid:
 ```JavaScript 
 Then I don't see elements in the grid:
     | 0:-1 | Line Item 1 |

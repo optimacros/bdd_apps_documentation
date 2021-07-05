@@ -1,4 +1,4 @@
-# Требования к написанию DBB тестов
+# Требования к написанию BDD тестов
 
 - Прохождение [курса](https://www.youtube.com/playlist?list=PLAQWOaLtueJeH8Ldr-lrFNhWJYmmX7K6s) обучения моделлера.
 
