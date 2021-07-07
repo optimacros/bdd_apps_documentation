@@ -56,6 +56,10 @@
 | folder Row                | FoldersItemRow-module__Container    |                       | yes                    |
 | model Card                | ModelsItemCard-module__Container    |                       | yes                    |
 | folder Card               | FoldersItemCard-module__Container   |                       | yes                    |
+| create Model Element      | createModelElement                  |                       |                        |
+| create Folder Element     | createFolderElement                 |                       |                        |
+| clean Temp Models         | cleanTempModels                     |                       |                        |
+| copy Model Element        | copyModelElement                    |                       |                        |
 | left Panel Element        | ModelLink__Container                |                       | yes                    |
 | memory Indicator Container| MemoryIndicator-module__Container   |                       | yes                    |
 | folder Count              | FoldersItemCard-module__CountModels |                       | yes                    |
@@ -100,7 +104,7 @@
 | markdown Preview          | MarkdownEditor__MarkdownEditorHtml  |                       |                        |
 | media File                | MediaFileItem__preview              |                       |                        |
 | modal Media Files         | MediaFileItem__preview              |                       |                        |
-| comment By User           | GridCommentsElement__Container , GridCommentsElement__Info |  | yes                  |
+| comment By User           | GridCommentsElement__Container , GridCommentsElement__Info  |  | yes                  |
 | zoom Slider               | ZoomSlider                          |                       |                        |
 | main Tabs                 | MainTabs__Container                 |                       |                        |
 | chart Scroll Conteiner    | ChartsDialog__config                |                       |                        |
@@ -121,6 +125,80 @@
 | Input Confirm Delete Model Name | HeconfirmedText               |                       |                        |
 | input New Model Name      | newModelName                        |                       |                        |
 | input New Folder Name     | newFolderName                       |                       |                        |
+| input                     | newFolderName                       | input , textarea - attr name | yes             |
+| checkbox                  |                                     | checkbox              | yes                    |
+| dropdown                  | dropdown                            |                       | yes                    |
+| dropdown Option           |                                     |                       | yes                    |
+| radio Button              |                                     | radio-button          | yes                    |
+| grid                      | GridRootContainer                   |                       |                        |
+| grid Error Info           | GridErrorInfo__Container            |                       |                        |
+| col Headers Container     | ColHeaders                          |                       |                        |
+| row Headers Container     | RowHeaders                          |                       |                        |
+| cells Container           | Cells                               |                       |                        |
+| grid In Dom               | ColHeaders , RowHeaders , Cells , TopLeftCell |             |                        |
+| kanban In Dom             | CategoryContainer , CategoryTitle , WorkflowCard |          |                        |
+| grid Cells By Selection   | GridSelection__Selected             |                       | yes                    |
+| row Headers Range         | GridSelection__Selected             |                       | yes                    |
+| col Headers Range         | GridSelection__Selected             |                       | yes                    |
+| grid Cells                | ContentCell                         |                       | yes                    |
+| grid Cell Error           | SubmissionErrorCell                 |                       | yes                    |
+| cell Pre Editor           | PreEditContainer                    |                       |                        |
+| grid Cell Editor          | GridCellEditor                      |                       |                        |
+| row Header                | RowHeaderCell                       |                       |                        |
+| col Header                | ColumnHeaderCell                    |                       |                        |
+| update Cell               | SubmissionCell                      |                       |                        |
+| update Header             | SubmissionCell                      |                       |                        |
+| style Heading Zero Level In Row Header  | heading0               |                       |                        |
+| Style Heading First Level In Row Header | heading1               |                       |                        |
+| style Heading Second Level In Row Header| heading2               |                       |                        |
+| style Heading Third Level In Row Header | heading3               |                       |                        |
+| Style Summary First Level In Row Header | summary1               |                       |                        |
+| Style Summary Second Level In Row Header| summary2               |                       |                        |
+| Style Summary Third Level In Row Header | summary3               |                       |                        |
+| style Summary In Col Header             | summary                |                       |                        |
+| rows Selection Container   | GridSelection__Rows                 |                       |                        |
+| cells Selection Container  | GridSelection__Body                 |                       |                        |
+| cols Selection Container   | GridSelection__Cols                 |                       |                        |
+| cell Comments Body Container | CellComments__Body                |                       |                        |
+| selection Row Header       | GridSelectionRowsLayout             |                       | yes                    |
+| selection Col Header       | GridSelectionColsLayout             |                       | yes                    |
+| only Selection Row Header  | GridSelectionRowsLayout             |                       | yes                    |
+| only Selection Col Header  | GridSelectionColsLayout             |                       | yes                    |
+| selection Grid Cell        | GridSelectionBodyLayout             |                       | yes                    |
+| commented Cell             | CellComments__hasCellComments       |                       | yes                    |
+| only Selection Grid Cell   | GridSelectionBodyLayout             |                       | yes                    |
+| selection Row Headers      | GridSelectionBodyLayout             |                       | yes                    |
+| only Selection Row Headers | GridSelectionBodyLayout             |                       | yes                    |
+| selection Col Headers      | GridSelectionColsLayout             |                       | yes                    |
+| only Selection Col Headers | GridSelectionColsLayout             |                       | yes                    |
+| selection Grid Cells       | GridSelectionBodyLayout             |                       | yes                    |
+| only Selection Grid Cells  | GridSelectionBodyLayout             |                       | yes                    |
+| color Swatch               | Color__swatch                       |                       | yes                    |
+| color                      |                                     | title                 | yes                    |
+| color Scheme               | ColorPalette                        | name , data-name      | yes                    |
+| action For Object          | MapWithObjectsConfig-module__ObjectsItem , |                | yes                    |
+|                            | ImagesWithObjectsConfig-module__ObjectsItem|                |                        |
+| control Zoom               |                                     | title                 | yes                    |
+| map Region                 | datamap-subunit                     |                       | yes                    |
+| contents                   | Contents                            |                       |                        |
+| functional Area            | Functional Area                     |                       | yes                    |
+| functional Area Label      | FunctionalArea__label               |                       | yes                    |
+| contents Element           | ElementLink__label                  |                       | yes                    |
+| contents Element View      | Elements__view                      |                       | yes                    |
+| card Of Dashboards         | BaseCard__content , GridTitle-module__Title |               | yes                    |
+| button Card With Name      | BaseCard__content , ButtonCard__Container |                 | yes                    |
+| contents Dialog            | ContentsDialog__Container           |                       |                        |
+| active Section             | Elements__isCurrent                 |                       |                        |
+| dashboard Contents Dialog  | HelpDashboardTab__Container         |                       |                        |
+| dashboard Scroll Content   | DashboardScrollContent              |                       |                        |
+| context Menu               | ContextMenu-module__Container , rc-dropdown-menu-submenu-popup | |                   |
+| context Menu Element       | ContextMenu-module__Element         |                       |                        |
+| header Menu                | HeaderMenu__Menu                    |                       |                        |
+| header Menu Element        | HeaderMenu__MenuItem                |                       | yes                    |
+| approximate Header Menu Element | HeaderMenu__ElementContainer   |                       | yes                    |
+| parent Header Menu Element | HeaderMenu__MenuItem_parent         |                       | yes                    |
+| child Header Menu Element  | HeaderMenu__MenuItem_child          |                       | yes                    |
+| header Title               | HeaderNavigation-module__Container  |                       | yes                    |
 
 [Инструкция поиска селекторов](../slectors/instructionSelector.md)
 
