@@ -192,13 +192,42 @@
 | dashboard Contents Dialog  | HelpDashboardTab__Container         |                       |                        |
 | dashboard Scroll Content   | DashboardScrollContent              |                       |                        |
 | context Menu               | ContextMenu-module__Container , rc-dropdown-menu-submenu-popup | |                   |
-| context Menu Element       | ContextMenu-module__Element         |                       |                        |
+| context Menu Element       | ContextMenu-module__Element         |                       | yes                    |
 | header Menu                | HeaderMenu__Menu                    |                       |                        |
 | header Menu Element        | HeaderMenu__MenuItem                |                       | yes                    |
 | approximate Header Menu Element | HeaderMenu__ElementContainer   |                       | yes                    |
 | parent Header Menu Element | HeaderMenu__MenuItem_parent         |                       | yes                    |
 | child Header Menu Element  | HeaderMenu__MenuItem_child          |                       | yes                    |
 | header Title               | HeaderNavigation-module__Container  |                       | yes                    |
+| module Name                | CreateModuleDialogAdvancedTab-module__InputField |          |                        |
+| conditional Formatting     | Input__input                        |                       | yes                    |
+| media File Config          | MediaFileDialog__configItem         |                       | yes                    |
+| grid Settings Input        | grid-settings                       |                       |                        |
+| filters                    | filterDropDown                      |                       |                        |
+| filter                     | filterDropDown                      |                       | yes                    |
+| formula                    | FormulaLine__Container              |                       |                        |
+| formula Apply Button       | FormulaSubmitBar__Button            |                       |                        |
+| formula Line Item          | FormulaLine__Title , FormulaColumn__Title |                 | yes                    |
+| field With Cell Value      | FormulaLine__Result                 |                       | yes                    |
+| formula Input              | FormulaEditorInput                  |                       |                        |
+| formula Submit Bar         | FormulaSubmitBar                    |                       |                        |
+| view Manager Item          | ViewManagerElement-module__Item     |                       | yes                    |
+| copy Data Element          | CopyDataDialog-module__MulticubesElement , |                | yes                    |
+|                            | CopyDataDialog-module__ResolutionListCheckbox |             |                        |
+| view Manager Rename Input  | ViewManagerElement-module__ItemInsideInput |                | yes                    |
+| pivot Filters Section      | dropZone--pages                     |                       |                        |
+| pivot Rows Section         | dropZone--rows                      |                       |                        |
+| pivot Columns Section      | dropZone--cols                      |                       |                        |
+| dnd Zone                   | dropZone                            | name                  | yes                    |
+| dnd Element                | DndElement__Target                  |                       | yes                    |
+| sub Menu Scroll List       | HeaderMenu__SubMenuScrollList       |                       | yes                    |
+| kanban Dnd Zone            | axisLabels , dropZone               |                       | yes                    |
+| kanban Scroll Content      | WorkflowKanban__ContainerScroll     |                       |                        |
+| kanban Element             | WorkflowCard__CardContent           |                       | yes                    |
+| conditional Formatting Element | ConditionalFormatting__Element_TitleCube |              | yes                    |
+| header Of Move Dialog      | Header_Title                        |                       |                        |
+| view Manager Item Dragger  | ViewManagerElement-module__ItemInsideDragger |              | yes                    |
+| grid Title Toolbar         | GridTitle-module__Toolbar           |                       |                        |
 
 [Инструкция поиска селекторов](../slectors/instructionSelector.md)
 
