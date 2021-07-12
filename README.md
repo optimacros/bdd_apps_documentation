@@ -4,5 +4,5 @@
 1. [Настройка таска в AM и подготовка к работе](settingsTask.md)
 2. [Описание типовых шагов](./steps/prerequisities.md)
 3. [Список селекторов](./slectors/instructionSelector.md)
-4. [Примеры использования](./advancedFeatues/advancedFeatue.md)
+4. [Примеры использования](./advancedFeatues/advancedFeature.md)
 5. [Запуск тестов и репорт](./importExportLib/importExportLib.md)
