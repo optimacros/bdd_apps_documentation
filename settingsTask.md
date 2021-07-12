@@ -8,7 +8,7 @@
 
 Структура [файлов и папок](preparationForWork/filesAndFolders.md)
 
-Создание [BDD API сборки]()
+Создание [BDD API сборки]() - Раздел для разработчиков!
 
 
 [Оглавление](README.md)
