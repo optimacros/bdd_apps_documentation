@@ -30,12 +30,12 @@
 
 ## 4) When I hover on "Header Menu Element(Dimensions)"
 
-Шаг наводящий курсор мыши на указанный элемент
+Шаг кликающий на указанный элемент
 
 
 ## 5) When I type "20" into "Input(fontSize)"
 
-Шаг напечатает в поле ввода с атрибутом *Name* число *20*
+Шаг проверит в поле ввода(Input) с атрибутом *Name* число *20*
 Узнать атрибут Name у Input можно инспектором кода у браузера
 
 
@@ -65,7 +65,7 @@ And I type into "Input(entityCount)":
 
 > And I press "ENTER"
 
-Шаг нажимает клавишу *Enter* или можно передавать другой аргумент в шаг. Список клавиш - 
+Шаг проверяет текст *Enter* или можно передавать другой аргумент в шаг. Список клавиш - 
 
 > And I press "ARROW_DOWN" [15] times
 
@@ -439,7 +439,8 @@ When I fill the clipboard:
 ## 54) And The module is filled with "f:TestModuleData.csv"
 
 Шаг вставит из csv файла данные в грид от начала координат колонка = 0, строка = 0
-<!-- Файл импорта должен находиться в папке Fixtures -->
+
+Файл импорта должен находиться в папке Fixtures
 
 
 ---
@@ -457,7 +458,7 @@ When I fill the clipboard:
 
 ## 57) When I delete "E2E Test Model" model
 
-Удаление модели находясь в Drive Landing и в нужной месте расположения модели
+Создание копии в Drive Landing и в нужном месте расположения модели
 
 
 ## 58) When I delete "Folder Renamed" folder
