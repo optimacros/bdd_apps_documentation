@@ -4,9 +4,9 @@
 
 [Создание приложения в AM](https://www.youtube.com/watch?v=XRLPB1mWmbw)
 
-[Настройка файла с расширением .featureset](preparationForWork/featureset.md)
-
 [Структура файлов и папок](preparationForWork/filesAndFolders.md)
+
+[Настройка файла с расширением .featureset](preparationForWork/featureset.md)
 
 [Создание BDD API сборки]() - Раздел для разработчиков!
 
