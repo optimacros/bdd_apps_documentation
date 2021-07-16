@@ -140,7 +140,7 @@
 | grid Cells By Selection   | GridSelection__Selected             |                       | yes                    |
 | row Headers Range         | GridSelection__Selected             |                       | yes                    |
 | col Headers Range         | GridSelection__Selected             |                       | yes                    |
-| grid Cells                | ContentCell                         |                       | yes                    |
+| grid Cell                 | ContentCell                         |                       | yes                    |
 | grid Cell Error           | SubmissionErrorCell                 |                       | yes                    |
 | cell Pre Editor           | PreEditContainer                    |                       |                        |
 | grid Cell Editor          | GridCellEditor                      |                       |                        |
