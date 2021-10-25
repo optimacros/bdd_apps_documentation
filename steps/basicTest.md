@@ -11,7 +11,7 @@ Feature: UI - Builder Menu - Context Tables - Table - Insert
 
   Scenario: <208.1> I can add Context Table in the grid Context Tables "Start" position
     When I click on "Header Menu Element(Context Tables)" in "Header Menu Element(Visualization)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I insert "Context Tables" elements at the "Start":
       """
       Form 1
@@ -43,7 +43,7 @@ Feature: UI - Builder Menu - Context Tables - Table - Insert
 
    ``` When I click on "Header Menu Element(Context Tables)" in "Header Menu Element(Visualization)"``` - Это комплексный шаг, он включает в себя несколько действий которые описаны чуть выше.
 
-2) После того как мы перешли к гриду с контекстными таблицами, пользователь глазами увидел бы загрузку грида.. и прежде чем он произвел бы какие-то следущие действия, он убедился  и дождался бы загрузки этой страницы. Для этого у нас есть несколько шагов, один из них ```And I see that Grid exists and loaded```.
+2) После того как мы перешли к гриду с контекстными таблицами, пользователь глазами увидел бы загрузку грида.. и прежде чем он произвел бы какие-то следущие действия, он убедился  и дождался бы загрузки этой страницы. Для этого у нас есть несколько шагов, один из них ```* Check if the Grid exists and loaded```.
 Существуют и другие способы убедиться что страница загрузилась - это дождаться проверки како-го нибудь элемента на стринице который присущ именно той табе и гриду, например какая-то колонка или строка в гриде.
 
 3) Далее мы используем следующий комплексный шаг:

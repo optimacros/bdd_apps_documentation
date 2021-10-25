@@ -1,118 +1,137 @@
 # Специфические шаги
 
-## 1)    And I don't see element "Card of Dashboards(1.1 Страны) > Loader" now
+## 1)    * Check if element "Selector" is visible now
+* Check if element "Card of Dashboards(1.1 Страны) > Loader" is visible now
 Отстуствие элемента на странице в данный момент вермени!
 
-## 2)    And I see that "Global Loader" doesn't exist for a long time
+## 2)    * Check if "Selector" does not exist for a long time
 Проверка на то что элемент отсуствует с задежкой по таймауту, т.е. вместо обычных 60 секунд, шаг будет ждать 3 минуты
 
-## 3)    And I reload app
+## 3)    * Reload Page
 Перезагрузка приложения
 
-
-## 4)    When I refresh page
-Перезагрузка приложения
-
-## 5)    Given I am on the "Drive Landing" page
+## 5)    * Go to page "PageName"
 Открыть страницу Drive Landing или Main
 
-## 6)    Given I am on the "Basic Module" module
-Откроеn какой-либо элемент с указанным именем. Шаг выберет элемент из списка в поле Contents, перед этим произойдет перезагрузка страницы - вызовет страницу Main
+## 6)    * Open tab "ModuleName"
+Откроет какой-либо элемент с указанным именем. Шаг выберет элемент из списка в поле Contents, перед этим произойдет перезагрузка страницы
 
-## 7)    Given I am on the "Dashboard with Data" dashboard
-Откроет какой-либо элемент с указанным именем. Шаг выберет элемент из списка в поле Contents, перед этим произойдет перезагрузка страницы - вызовет страницу Main
+## 7) * Close tab "ModuleName"
+Зкарывает указанный таб
 
-## 8)    And I clear temp model at current workspace
+## 8) * Wait [Number] seconds
+Ожидание в секундах
+
+## 8)    * Clean temp models in current workspace
 Очистка временных моделей (копии моделей с хешом и другие модели с хешом)
 
-## 9)    And I wait until modal is opened
+## 9)    * Wait until the modal form is open
 Ожидание открытия модального окна
 
-## 10)    And I clear "([^"]*)" input
+## 10)   * Clear "Selector"
+* Clear "Conditional Formatting(Maximum) > Input"
 Очистка значения в поле input. В качестве аргумента указывается атрибут Name нужного input
 
-## 11)    And I see that "Tab Header" with text "Half Years" is active
-Проверка на то, активен ли таб
+## 11)    * Check if "Selector" with text "Text" is active
+Используется для роверки на то, активен ли таб
 
-## 12)    And I see that "Tab Header" with text "Half Years" is not active
+## 12)    * Check if "Selector" with text "Text" is not active
+* Check if "Tab Header" with text "Half Years" is not active
 Проверка на то, не активен ли таб
 
 ## 13)    And I scroll vertical scroller to element ""
 Проскролить до нужной строки с названием
 
-## 14)    When I scroll kanban vertical scroller to down
+## 14)    * Scroll the kanban vertical scrollbar to the top
 Вертикальный скролл в Kanban
+* Scroll the kanban vertical scrollbar to the middle
+* Scroll the kanban vertical scrollbar to the bottom
 
-## 15)    When I scroll kanban horizontal scroller to end
+## 15)    * Scroll the kanban horizontal scrollbar to the start
 Горизонтальный скролл в Kanban
+* Scroll the kanban horizontal scrollbar to the middle
+* Scroll the kanban horizontal scrollbar to the end
 
-## 16)    And I call the context menu with hot keys
+## 16)    * Open the context menu with a hotkey
 Вызов диалогового окна по CTRL + Q со списком измерений
 
 ## 17)    And I run action "Default Action"
 Запуск акшена по кнопке Run в Toolbar грида Actions
 
-## 18)    And I submit the form
+## 18)   * Submit the form
 Шаг кликает по кнопке Sabmit
 
-## 19)    When I set "Time Period coll empty" to "Feb 19" for element "В2" without update cell
+## 19)   * Set "Value" of the cell at the intersection of "CollName" and "RowName" without updating the cell
 Выбор из выпадающего списка открывающегося на пересечении колонки и строки без ожидания лоадера и пауз в конце шага.
-- Первый аргумент название колонки
-- Далее элемент из выпадающего списка
-- Далее указываем название строки
 
-## 20)    When I type "66000000" into property "Стоимость производства" of element "Jan 17" without update checking
+
+## 20) * Set "Value" of the cell at the intersection of "CollName" and "RowName"
+Выбрать опцию в выпадающем списке на пересечении Колонки и Строки
+
+## 20) * Set "Value" of the cell at the intersection of "CollName" and "RowName" without updating the cell
+Выбрать опцию в выпадающем списке на пересечении Колонки и Строки без ожидания обновления грида
+
+## 20) * Insert "Text" into the cell at the intersection of "CollName" and "RowName"
 Ввод в клетку текста на пересечении колонки и строки без ожидания лоадера и пауз в конце шага.
-- Первый аргумент это текст который хотим ввести в клетку
-- Далее название колонки
-- И указываем название строки
 
-## 21)    And I see that size prop "width" of element "Col Header(Line Item Text)" is [81]
+
+## 20) * Insert "Text" into the cell at the intersection of "CollName" and "RowName" without updating the cell
+Ввод в клетку текста на пересечении колонки и строки без ожидания лоадера и пауз в конце шага.
+
+## 21)    * Check if "width" of "Selector" equals to [Number]
+* Check if "width" of "Col Header(Line Item Text)" to [81]
 Ширина в px у опредленной колонки. Можно в качестве агрумента передать и другое свойство
 
 
-## 22)    Then I see that css prop "left" of element "Selection Body Layout" is [243px]
+## 22)    * Check if CSS style "top" of "Selector" equals to [Number] exists
+Then I see that css prop "left" of element "Selection Body Layout" is [243px]
 Проверка пропертри у css свойства элемента
 
-## 23)    And I see that grid has right spaces 
+## 23)    * Check that grid has right spaces
 Проверка того что в конце грида справа есть отступ
 
-## 24)    Then I see that grid has down spaces
+## 24)    * Check that grid has down spaces
 Проверка того что в конце грида снизу есть отступ
 
-## 25)    And I drag "Zoom Slider" and see value [1]
+## 25)    * Drag "Selector" and set the value equal to [Number]
+* Drag "Zoom Slider" and set the value equal to [1]
 Шаг для увеличения или уменьшения размера приложения в настройках пользователя.
 
-## 26)    And I set viewport width [1366] and height [620]
+## 26)   * Set viewport width [Pixels] and height [Pixels] pixels
 Если понадобилось запустить тест с другим размером браузера. Дефолтно запускается с 1920x1080
 
-## 27)    When I stretch element "Col Header(-2:4|Line Item 3)" to the "right" by [48]
+## 27)   * Stretch element "Selector" [Pixels] pixels to the "left"
 Шаг для растягивания элементов в нужном направлении на нужное колличество px
+* Stretch element "Selector" [Pixels] pixels to the "right"
+* Stretch element "Selector" [Pixels] pixels to the "top"
+* Stretch element "Selector" [Pixels] pixels to the "bottom"
 
-## 28)    Then I see that height of element "Constraints Formula Line" is equal to [213]
+## 28)    * Check that height of the "Selector" is equal to [Number]
+* Check that height of the "Constraints Formula Line" is equal to [213]
 Проверка высоты поля ввода в гриде Optimizer
 
-## 29)    And I see that Grid exists and loaded in [15] seconds
-Шаг выполняет провергу загрузки грида в течении 15 секунд. Если за 15 секунд грид не загрузился, то шаг упадет. Выставить мы можем время в пределах 60 секунд
+## 29)    * Check if the Grid exists and loaded after [Number] second (s)
+Шаг выполняет провергу загрузки грида в течении *** секунд. Если за *** секунд грид не загрузился, то шаг упадет. Выставить мы можем время в пределах 60 секунд
 
-## 30) And I paste after hash in url "eyJ0eXBlIjoiTXVsdGljdWJlc0RhdGFCdWlsZGVyVGFiIiwicGFyYW1zIjp7InRpdGxlIjoiTXVsdGljdWJlcyIsImFjdGl2ZVRhYiI6MH19"
+## 30)  * Paste "Text" after hash in the url
+ * Paste "eyJ0eXBlIjoiTXVsdGljdWJlc0RhdGFCdWlsZGVyVGFiIiwicGFyYW1zIjp7InRpdGxlIjoiTXVsdGljdWJlcyIsImFjdGl2ZVRhYiI6MH19" after hash in the url
 Шаг вставляет дополнительный хеш в адресную строку браузера после ID модели и символа # - Этот шаг нужен для тестирования роутинга
     
-## 31) When I remove hash from url
+## 31) * Remove hash from the url
 Шаг удалит хэш после id модели
 
-## 32) And I set to input "Grid Settings Input" value:
+## 32) * Set the value to "Selector":
 ```JavaScript 
-And I set to input "Grid Settings Input" value:
+* Set the value to "Grid Settings Input":
       """
       { "defaultCellWidth": 90, "defaultCellHeight": 30 }
       """
 ```
-Шаг возможно не работает.. Вводил текст в инпут
+Шаг возможно не работает.. Он вводил текст в инпут
 
-## 33) Then I see in input "Formula Input" value:
+## 33) * Check if "Selector" contains value:
 ```JavaScript 
-Then I see in input "Formula Input" value:
+* Check if "Formula Input" contains value:
 """
     =	 100+
 100+
@@ -122,9 +141,10 @@ Then I see in input "Formula Input" value:
 Шаг проверяет отступы и текст в инпуте
 
 
-## 34) Then I see in element "Grid Cell(2:1)" title:
+## 34) * Check if "Selector" title matches:
+
 ```JavaScript 
-Then I see in element "Grid Cell(2:1)" title:
+* Check if "Grid Cell(2:1)" title matches:
 """
 sdfsdfjsd;lkfjsdlkfjsdlkfj sdfsdfsdfaaaaajkhkjhsdfkljsdhflksdjhfksdljfhksdjfh
 
@@ -134,29 +154,41 @@ sdfsdlkfjsdlkfj lksdjf;sdlkjflkjlksdjf skdfjlsdkfjsd;lfjksdlfj dsfjsdlfkjsdf
 Шаг проверяет value элементов с отсутпами и всем текстом
 
 
-## 35) > When I drop file "E2E Test Model.zip" to the "Drive Landing"
+## 35) * Drop file "File" to "Selector"
 When I drop file "Nomenklatura.xlsx" to the "Grid"
 
 Шаги для переноса файлов из папки Fixtures в наш грид или еще какую-то область. Это позволяет сделать импорт подготовленного файла
 
-## 36) > Then I compare "Grid Container" with "conditional-formatting-for-row-where-exist-cell-with-preset.png"
+## 36) * Compare "Selector" with "File.png"
 Шаг для сравнения эталонного скриншота с тем скриншотом который будет делаться при прогоне теста.
 Сам шаг довольно специфический. Есть много нюансов, раскажу несколько из них!
 Чтобы сделать скриншот эталонный, нужно прогнать сам тест, забрать сделанный скриншот из репорта, положить его в проект в папку screanshots и в следующих запусках теста, шаг уже будет сравнивать один скриншот со вторым.
 
+## 37) * Screenshot page "File.png"
+
+## 38) * Check if the style in "Selector" matches "Style"
+* Check style "heading1" in "Grid Cell(0:13)"
+Проверка стиля в ячейке по координатам
+
+## 39) * Check if the style in "Selector" does not match "Style"
+Проверка отсуствия стиля в ячейке по координатам
+
+## 39) * Scroll the vertical scroller to the element "Selector"
+Проскролить грид по вертикали к указанному элементу. Грид должен быть прогружен если элемент ниже видимой области..
+
 
 # Сервисные шаги
 
-## 1)    Given Isolated "E2E Test Model" model
+## 1)    * Start with an isolated model "ModelName"
 Создание изолированной модели
 
-## 2)    Given Not isolated "E2E Context Hard Test" model
+## 2)    * Start with a not isolated model "ModelName"
 Создание не изолированной модели
 
-## 3)    Given App as "modeller"
+## 3)    * Start as a "User"
 Открытие приложения из под определенного пользоваля. Используем для проверки функционала из под пользователей с разными правами - моделлеры, не моделлеры, лимитированные пользователи
 
-## 4)    Then Destroy feature model
+## 4)    * Delete the current model
 Удаление ранее созданной изолированной копии модели самим тестом. ***Нужно быть осторожным, если вы запустите тест в оригинальной модели, то шаг удалит вашу модель!***
 
 [Список всех шагов](../steps/allSteps.md)

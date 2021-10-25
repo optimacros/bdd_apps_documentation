@@ -26,11 +26,11 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
     Then I see that "Notification(Your backup was saved successfully)" doesn't exist
 
     When I click on "Header Menu Element(Logs)" in "Header Menu Element(Security Center)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see that "Row Header(2, 0:-1)" exists
 
     When I click on "Header Menu Element(Time)" in "Header Menu Element(Dimensions)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Grid Cell(5:0)"
     And I click on "Cell Pre Editor > Icon(arrow_drop_down)"
     And I see that "Filter Element(Apr 21)" exists
@@ -48,7 +48,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <1.3> Create new version at the end of the list
     When I click on "Header Menu Element(Versions)" in "Header Menu Element(Dimensions)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I insert "Versions" elements at the "Start":
       """
       Previous Plan
@@ -457,7 +457,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <3.1> Change view for "Доходы"
     When I click on "Contents Element(Доходы)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Toolbar > Enabled Button(Pivot)"
 
     And I drag "Dnd Element(Versions)" and drop it after "Dnd Element(Cubes)"
@@ -538,7 +538,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <3.5> Change view for "Накладные расходы"
     When I click on "Contents Element(Накладные расходы)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Enabled Button(Pivot)"
     And I drag "Dnd Element(Versions)" and drop it before "Dnd Element(Cubes)"
     And I see that "Dnd Zone(Rows) > Dnd Element(Versions)" exists
@@ -611,7 +611,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <3.9> Change view for "Производственные затраты"
     When I click on "Contents Element(Производственные затраты)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Enabled Button(Pivot)"
     And I drag "Dnd Element(Versions)" and drop it before "Dnd Element(Cubes)"
     And I see that "Dnd Zone(Rows) > Dnd Element(Versions)" exists
@@ -679,7 +679,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <3.13> Change view for "Фин. результат"
     When I click on "Contents Element(Фин. результат)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Enabled Button(Pivot)"
 
     And I drag "Dnd Element(Versions)" and drop it before "Dnd Element(Cubes)"
@@ -730,49 +730,49 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
   Scenario: <3.15> Hide Jun 21 column
     When I right click on "Col Header(Jun 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Jul 21)" exists
     Then I see that "Col Header(Jun 21)" doesn't exist
 
   Scenario: <3.16> Hide Jul 21 column
     And I right click on "Col Header(Jul 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Aug 21)" exists
     Then I see that "Col Header(Jul 21)" doesn't exist
 
   Scenario: <3.17> Hide Aug 21 column
     And I right click on "Col Header(Aug 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Sep 21)" exists
     Then I see that "Col Header(Aug 21)" doesn't exist
 
   Scenario: <3.18> Hide Sep 21 column
     And I right click on "Col Header(Sep 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Oct 21)" exists
     Then I see that "Col Header(Sep 21)" doesn't exist
 
   Scenario: <3.19> Hide Oct 21 column
     And I right click on "Col Header(Oct 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Nov 21)" exists
     Then I see that "Col Header(Oct 21)" doesn't exist
 
   Scenario: <3.20> Hide Nov 21 column
     And I right click on "Col Header(Nov 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(Dec 21)" exists
     Then I see that "Col Header(Nov 21)" doesn't exist
 
   Scenario: <3.21> Hide Dec 21 column
     And I right click on "Col Header(Dec 21)"
     And I click on "Menu Item(Hide)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I see that "Col Header(FY21)" exists
     Then I see that "Col Header(Dec 21)" doesn't exist
 
@@ -788,7 +788,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
     And I see that "Modal > Checkbox(details)" is checked
     And I click on "Modal > Checkbox(details)"
     And I click on "Modal > Button(Ok)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see that "Row Header(Клинское)" doesn't exist
 
     When I click on "Row Header(0:-1)"
@@ -839,7 +839,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.1> Open "Доходы" and enter Edit Mode
     When I click on "Contents Element(Доходы)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Tab Header(Edit Mode)"
     Then I see elements in the grid:
       | 0:-1 | Доходы          |
@@ -871,7 +871,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.4> Fill formulas for the new modules
     When I click on "Header Menu Element(Cubes)" in "Header Menu Element(Data)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "1000 + 'Затраты на изготовление' * 0.1" into property "Formula" of element "Общезаводские затраты"
     And I type "'Затраты на материалы' + 'Затраты на изготовление' + 'Общезаводские затраты'" into property "Formula" of element "Себестоимость производства"
     And I type "'Доходы'.'Продажи' * 0.05" into property "Formula" of element "Реклама ТВ"
@@ -917,7 +917,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.6> Control Check 0 (checking final results in "Data Input Check")
     When I click on "Contents Element(Data Input Check)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see elements in the grid:
       | 0:-1  | Доходы            | 0       | 0       | 0       | 0       | 0       | 0        |
       | 1:-1  | Заводские расходы | 9 900   | 9 900   | 9 900   | 9 900   | 9 900   | 118 800  |
@@ -947,7 +947,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
     And I see that "Modal" exists
     And I click on "Modal > Button(Ok)"
     And I see that "Modal" doesn't exist
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "100" into property "Jan 21" of row "1"
     And I see that "Grid Cell(1:0, 100)" exists
     And I click on "Grid Cell (1:0)"
@@ -1013,7 +1013,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.10> Control Check 1 (checking final results in "Data Input Check")
     When I click on "Contents Element(Data Input Check)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see elements in the grid:
       | 0:-1  | Доходы            | 110       | 110       | 110       | 110       | 0         | 440        | 440       | 0         |
       | 1:-1  | Заводские расходы | 9 900     | 9 900     | 9 900     | 9 900     | 9 900     | 118 800    | 39 600    | 79 200    |
@@ -1028,10 +1028,10 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.11> Continue filling in "Доходы - Лента"
     When I click on "Contents Element(Доходы)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I change filter "Total Company" to "Лента"
     And I change filter "Total Brands" to "Клинское"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I click on "Grid Cell(0:0)"
     And I type "15000" into property "Jan 21" of row "0"
     Then I see elements in the grid:
@@ -1060,7 +1060,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.12> Control Check 2 (checking final results in "Data Input Check")
     When I click on "Contents Element(Data Input Check)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see elements in the grid:
       | 0:-1  | Доходы            | 16 500  | 17 600  | 16 500  | 20 350  | 0         | 70 950    | 70 950   | 0         |
       | 1:-1  | Заводские расходы | 9 900   | 9 900   | 9 900   | 9 900   | 9 900     | 118 800   | 39 600   | 79 200    |
@@ -1071,7 +1071,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <4.13> Fill the module "Накладные расходы - Клинское"
     When I click on "Contents Element(Накладные расходы - Клинское)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see elements in the grid:
       | 0:-1  | Реклама ТВ              | 750   | 800   | 750   | 925   | 0     | 0     | 0     | 0     |
       | 1:-1  | Затраты на персонал     | 600   | 600   | 600   | 600   | 600   | 600   | 600   | 600   |
@@ -1088,13 +1088,13 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
     When I click on "Grid Cell(2:0)"
     And I type "300" into property "Jan 21" of row "2"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "300" into property "Feb 21" of row "2"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "300" into property "Mar 21" of row "2"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "300" into property "Apr 21" of row "2"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "500" into property "May 21" of row "6"
     Then I see elements in the grid:
       | 6:-1  | Скидки дистрибьюторам   |  |  |  |  | 500 |
@@ -1144,21 +1144,21 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
     When I click on "Grid Cell(0:0)"
     And I type "400" into property "Jan 21" of row "0"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "300" into property "Feb 21" of row "0"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "400" into property "Mar 21" of row "0"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "500" into property "Apr 21" of row "0"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "150" into property "Jan 21" of row "1"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "250" into property "Feb 21" of row "1"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "800" into property "Mar 21" of row "1"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "100" into property "Apr 21" of row "1"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     And I type "450" into property "May 21" of row "4"
     Then I see elements in the grid:
       | 4:-1  |  |  |  |  |  | 450 |
@@ -1212,7 +1212,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
 
   Scenario: <5.1> Revert model
     When I click on "Header Menu Element(Logs)" in "Header Menu Element(Security Center)"
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see that "Row Header(2, 0:-1)" exists
     Then I see that "Row Header(1, 1:-1)" exists
 
@@ -1223,7 +1223,7 @@ Feature: UI - Builder Menu - Dimensions - Time - Tabs
     And I click on "Modal > Button(Restore)"
     And I see that "Global Loader" exists
     And I see that "Global Loader" doesn't exist
-    And I see that Grid exists and loaded
+    * Check if the Grid exists and loaded
     Then I see that "Row Header(1, 0:-1)" exists
     Then I see that "Row Header(2)" doesn't exist
 
