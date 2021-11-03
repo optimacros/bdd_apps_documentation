@@ -1,10 +1,10 @@
 
 # Basic-шаги (Часто используемые)
 
-## 1) * Start with an isolated model "ModelName"
+## 1. * Start with an isolated model "ModelName"
 Создание изолированной модели
 
-## 2) * Start with a not isolated model "ModelName"
+## 2. * Start with a not isolated model "ModelName"
 Создание не изолированной модели
 
 ## 3) * Start as a "User"
