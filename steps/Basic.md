@@ -1,13 +1,13 @@
 
 # Basic-шаги (Часто используемые)
 
-1. ## * Start with an isolated model "ModelName"
+## 1) * Start with an isolated model "ModelName"
 Создание изолированной модели
 
-1. ## * Start with a not isolated model "ModelName"
+## 2) * Start with a not isolated model "ModelName"
 Создание не изолированной модели
 
-1. ## * Start as a "User"
+## 3) * Start as a "User"
 Открытие приложения из под определенного пользоваля. Используем для проверки функционала из под пользователей с разными правами - моделлеры, не моделлеры, лимитированные пользователи
 
 ## 4) * Delete the current model
