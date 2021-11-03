@@ -1,85 +1,65 @@
 
 # Basic-шаги (Часто используемые)
 
-## 1) * Start with an isolated model "ModelName"
-Создание изолированной модели
+## Сервисные шаги
 
-## 2) * Start with a not isolated model "ModelName"
-Создание не изолированной модели
+### 1) * Start with an isolated model "ModelName"
+Создает копию модели (изолированную модель) и запускает ее.
 
-## 3) * Start as a "User"
-Открытие приложения из под определенного пользоваля. Используем для проверки функционала из под пользователей с разными правами - моделлеры, не моделлеры, лимитированные пользователи
+### 2) * Start with a not isolated model "ModelName"
+Запускает оригинальную (не изолированную) модель.
 
-## 4) * Delete the current model
-Удаление ранее созданной изолированной копии модели самим тестом. ***Нужно быть осторожным, если вы запустите тест в оригинальной модели, то шаг удалит вашу модель!***
+### 3) * Start as a "User"
+Запускает приложение с правами доступа определенного пользоваля, например: Modeller, Developer, Not Modeller.
 
-## 5) * Go to page "PageName"
-Открыть страницу Drive Landing или Main
+### 4) * Delete the current model
+Удаляет ранее созданную копию модели (изолированную модель).
 
-## 6) * Open tab "ModuleName"
-Откроет какой-либо элемент с указанным именем. Шаг выберет элемент из списка в поле Contents, перед этим произойдет перезагрузка страницы
+***Нужно быть осторожным, если вы запустите тест в оригинальной модели, то шаг удалит вашу модель!***
 
+### 5) * Go to page Drive Landing
+Открывает страницу Drive Landing.
 
-## 7) * Reload Page
-Перезагрузка приложения
+### 6) * Go to page Contents Page
+Открывает страницу Contents Page.
 
+### 7) * Open tab "ModuleName"
+Переходит на страницу Contents и открывает вкладку с указанным именем.
 
-## 8) * Check if the Grid exists and loaded
+### 8) * Reload Page
+Перезагружает страницу.
+
+### 24) * Wait until the modal form is open
+Ожидает открытие модального окна.
+
+## Проверка существования элементов
+
+### 9) * Check if the Grid exists and loaded
 Шаг проверят загрузку грида и отсуствие лоадера. Часто применяется после открытия нового грида или изменения состояния грида на котором находится пользователь. Когда заведомо известно, что грид должен загрузиться или обновиться, то применяем этот шаг. Можно не применять его если мы проверяем какие-то элементы в гриде. Например мы вошли в новый грид, проверили существование колонки с определенным названием или строки и это гарантирует нам что грид загружен, иначе элементов видно небыло-бы без загрузки грида.
 
+__*Мне не нравится это описание - много текста. Подумай как убрать лишнее.*__
 
-## 9) * Check if "Selector" exists
+### 10) * Check if "Selector" exists
+Проверяет существование элемента на странице.
 ```
-* Check if "Modal" **exists**
+* Check if "Modal" exists
 * Check if "Row Header(Балтика)" exists
+* Check if "Any Loader" exists
 ```
 
-Есть шаги по проверке существования элементов - селекторов в приложении. Применяются они для того чтобы убедиться в том, появилось что либо после какого-нибудь события.
-
-Альтернативные шаги следуют далее:
+### 11) * Check if "Selector" does not exist
+Проверяет отсутствие элемента на странице.
 ```
-* Сheck that "Selector" is checked
-* Сheck that "Selector" is not checked
-* Сheck that "Grid Cell(7:0) > Checkbox" **is checked**
+* Check if "Modal" does not exist
+* Check if "Row Header(Балтика)" does not exist
+* Check if "Any Loader" does not exist
 ```
-
-
-Можно проверять Boolean кнопку на ее состояние, **true**(***is checked***) или **false**(***is not checked***)
-В этом примере у *Grid Cell(7:0)* есть Checkbox и мы проверяем его состояние.
-```
-* Сheck that "Selector" is disabled
-* Сheck that "Selector" is not disabled
-* Сheck that "Tab Header(Half Years)" **is disabled**
-```
-
-Проверка на свойство элемента, **disabled** или **is not disabled**
-Вот еще пример: *And I see that "Modal > Button(Delete)" is disabled*
-
-```
-* Сheck that "Selector" is active
-* Сheck that "Selector" is not active
-* Сheck that "Modal > Tab Header(Basic)" **is active**
-```
-
-Првоерка на активность элемента. К напримеру у Табов в приложении есть такое состояние и мы можем проверять  активна ли она - **is active** или нет - **is not active**
-
-```
-* Сheck that "Selector" is selected
-* Сheck that "Modal > Tree Menu Element(test property for update)" is selected
-```
-Проверка на то, заселекчен ли элемент
-
-
-## 10) * Check if "Selector" does not exist
-```* Check if "Row Header(Балтика)" does not exist```
-Шаг проверяет, что строки с таким-то именем **нет** в гриде.. Данный пример говорит о том, что шагом мы проверяем элемент который отсуствет после применения функционала Hide или другого скрытия(удаления к примеру).
 
 Важно перед таким шагом проверять существование других элементов или завершение загрузки грида
 ```
 * Check if the Grid exists and loaded
 * Check if "Row Header(1:-1)" does not exist
 ```
-
  или 
 
  ```
@@ -89,100 +69,105 @@
 * Check if "Row Header(Балтика)" does not exist
 ```
 
+### 12) * Check if "Selector" contains "Text"
+Проверяет что элемент содержит текст.
+```
+* Check if "Modal > Sample Value" contains "-1,234.56789"
+```
+Проверяет что в модальном окне есть текст `-1,234.56789`.
 
-## 11) * Check if "Selector" contains "Text"
-```* Check if the text in "-1,234.56789" equals to "Modal > Sample Value"```
-Шаг для проверки текста у определенного селектора или у контейнера.
-Представим что у нас есть модальное окно и нам нужно проверить часть текста `-1,234.56789` в этом нам и поможет этот шаг.
+### 13) * Check if "Selector" does not contain "Text"
+Проверяет что элемент не содержит текст.
 
+### 14) * Check if "Selector" attribute value equals to "Value"
+Проверяет значение в инпуте.
+```
+* Check if "Modal > Input(dependOn)" attribute value equals to "1.2 Контрагенты"
+```
 
-## 12) * Check if "Selector" does not contain "Text"
-Шаг проверит отсуствие текста у указанного селектора
+### 15) * Check if "Selector" property value equals to "Value"
+Проверяет свойство property у определенного элемента.
+```
+* Check if "Grid Cell Editor" property value equals to "VCAR_01_01"
+```
 
-
-## 13) * Check if "Selector" attribute value equals to "Value"
-```* Check if "Modal > Input(dependOn)" attribute value equals to "1.2 Контрагенты"```
-Проверка значения в инпуте
-
-
-## 14) * Check if "Selector" property value equals to "Value"
-```* Check if "Grid Cell Editor" property value equals to "VCAR_01_01"```
-Проверка свойства property у определенного элемента
-
-
-## 15) * Check if the property value for "CollName" and "RowName" equals to "Value"
- ```* Check if the property value for "О1.2" and "Text col with data" equals to "444"```
-Проверка property на пересечении Строки и Колонки.
-- Первый аргумент О1.2 - это название колонки
+### 16) * Check if the property value for "CollName" and "RowName" equals to "Value"
+Проверяет значение в ячейке на пересечении строки и колонки с именами.
+```
+* Check if the property value for "О1.2" and "Text col with data" equals to "444"
+```
+- Первый аргумент О1.2 - название колонки
 - Text col with data - название строки. 
 - 444 - данные в ячейке
 
-
-## 16) * Check elements in the grid:
+### 17) * Check if the elements in the grid match:
+Проверяет что грид содержит значения.
 ```JavaScript 
-* Check elements in the grid:
-    | 0:-1 | cube 1 | 21   | 17 |
-    | 1:-1 | cube 2 | О1.2 | В2 |
+* Check if the elements in the grid match:
+    | 0:-1 | cube 1 | 21 | 17 |
+    | 1:-1 | cube 2 |  2 | В2 |
 ```
-
 Шаг проверяет данные в гриде, с указанием номера строки и данных в колонках. Колонки отбиваются друг от друга символом **|** 
 
 Есть возможность не указывать значения клеток **|  |** оставить контейнер пустым
 
+### 18) * Check if the elements in the grid do not match:
+Проверяет что грид содержит значения.
+```JavaScript 
+* Check if the elements in the grid do not match:
+    | 0:-1 | cube 1 | 21 | 17 |
+    | 1:-1 | cube 2 |  2 | В2 |
+```
 
-## 17) * Check if the elements in context ""DashboardSelector"" grid match:
+### 18) * Check if the elements in context ""DashboardSelector"" grid match:
+Проверяет что грид в карточке дашборда содержит значения.
 ```JavaScript 
 * Check if the elements in context ""DashboardSelector"" grid match:
   | 0:-1 | Value | Value | Value |
   | 1:-1 | Value | Value | Value |
 ```
+### 18) * Check if the elements in context "DashboardSelector" grid do not match:
+Проверяет что грид в карточке дашборда не содержит значения.
+```JavaScript 
+* Check if the elements in context "DashboardSelector" grid do not match:
+  | 0:-1 | Value | Value | Value |
+  | 1:-1 | Value | Value | Value |
+```
 
-## 18)    * Check if element "Selector" is visible now
-```* Check if element "Card of Dashboards(1.1 Страны) > Loader" is visible now```
-Отстуствие элемента на странице в данный момент вермени!
+### 19) * Сheck if the input value in "Selector" equals to "Value"
+Проверяет что введенный в поле ввода текст равен значению.
 
+### 22) * Check if "Selector" with text "Text" is active
+Проверяет что вкладка с названием “Text” активна.
+```
+* Check if "Tab Header" with text "Half Years" is active
+```
 
-## 19) * Сheck if the input value in "Selector" equals to "Value"
-Проверяет value у инпута с названием
+### 23) * Check if "Selector" with text "Text" is not active
+Проверяет что вкладка с названием “Text” не активна.
+```
+* Check if "Tab Header" with text "Half Years" is not active
+```
 
+## Работа с Инпутами
 
-## 20) * Check if "Selector" is shown
-Проверка существования элемента и то что он видим
+### 25) * Clear value in "Selector"
+Очищает значения в поле input. В качестве аргумента указывается атрибут Name нужного input.
+```
+* Clear value in "Conditional Formatting(Maximum) > Input"
+```
 
-
-## 21) * Check if "Selector" is not shown
-Проверка того, что элемента не видно
-
-
-## 22) * Check if "Selector" with text "Text" is active
-Используется для роверки на то, активен ли таб
-
-## 23) * Check if "Selector" with text "Text" is not active
-```* Check if "Tab Header" with text "Half Years" is not active```
-Проверка на то, не активен ли таб
-
-
-## 24) * Wait until the modal form is open
-Ожидание открытия модального окна
-
-
-## 25) * Clear value in "Selector"
-```* Clear "Conditional Formatting(Maximum) > Input"```
-Очистка значения в поле input. В качестве аргумента указывается атрибут Name нужного input
-
-
-## 26) * Set value "Value" to "Selector"
-```* Set value "Big multicube" to "Module Name"```
-Шаг введет текст *Big multicube* в инпут у которого атрибут *Name* = Module Name
-
-
-## 27) * Type "Text" into "Selector"
-```* Type "20" into "Input(fontSize)"```
+### 27) * Type "Text" into "Selector"
+Печатает текст в инпуте.
+```
+* Type "20" into "Input(fontSize)"
+```
+___Вообще не понятно что тут написано. Нужно перефразировать!!!!!___
 Шаг введет данные в поле ввода(Input) с атрибутом *Name* числом *20*.
 Узнать атрибут Name у Input можно инспектором кода у браузера.
 
-
-## 28) * Type the text into "Selector":
+### 28) * Type the text into "Selector":
+Печатает текст в инпуте.
 ```JavaScript 
 * Type the text into "Input(entityCount)":
       """
@@ -191,43 +176,53 @@
 ```
 
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
+___Предыдущий шаг тоже кликает на инпут. Разница в том, что этот шаг используется для ввода нескольких строк текста. Нужно переписать.___
 
+### 29) * Type "Text"
+Печатает текст. Предварительно нужно сфокусироваться на поле ввода.
 
-## 29) * Type "Text"
-Шаг наберет указанный текст. Правда перед этим шагом нужно выбрать место где наберется этот текст.
+### 30) * Set "Value" of the cell at the intersection of "CollName" and "RowName"
+Выбирает определенный пункт в выпадающем списке ячейки на пересечении строки и колонки.
+```
+* Set "E-Property" of the cell at the intersection of "Enumerated List" and "Display Name Property"
+```
 
+### 31) * Type "Text" into the cell at the intersection of "CollName" and "RowName"
+Печатает текст в ячейке на пересечении колонки и строки.
+```
+* Type "renamed" into the cell at the intersection of  "Code" and  "#5487"
+```
 
-## 30) * Set "Value" of the cell at the intersection of "CollName" and "RowName"
-```* Set "E-Property" of the cell at the intersection of "Enumerated List" and "Display Name Property"```
-Выбор определенного пункта в выпадающем списке на пересечении строки и колонки.
+### 32) * Type "Text" into the cell at the intersection of "CollName" and the row number [Number]
+Печатает текст в ячейке на пересечении колонки с именем и строки с номером.
 
-## 31) * Type "Text" into the cell at the intersection of "CollName" and "RowName"
-```* Type "renamed" into the cell at the intersection of  "Code" and  "#5487"```
-Шаг прописывает текст на пересечении колонки и строки
+## Drag and Drop
+### 33) * Drag "DndElement" and drop into "DndZone"
+Перетаскивает DND элемент в указанную DND зону.
+```
+* Drag "Dnd Element(2.2 Клиенты)" and drop it into "Dnd Zone(Pages)"
+```
 
-## 32) * Type "Text" into the cell at the intersection of "CollName" and the row number [Number]
-Шаг прописывает текст на пересечении колонки и номером строки
+### 33) * Drag "DndElement" and drop before "Element"
+Захватывает левой клавишей мыши DND элемент, перетаскивает его и бросает перед указанным элементом.
+```
+* Drag "Dnd Zone(Available) > Dnd Element(Бренды)" and drop it before "Dnd Element(Filters)"
+```
 
+### 33) * Drag "DndElement" and drop after "DndZone"
+Захватывает левой клавишей мыши DND элемент, перетаскивает его и бросает после указанного элемента.
+```
+* Drag "Dnd Zone(Available) > Dnd Element(Versions)" and drop it after "Dnd Element(Filters)"
+```
 
-## 33) * Drag "DndElement" and drop into "DndZone"
-С помощью этого шага возможно перетаскивать определенные DND элементы на другие зоны или элементы
+### 34) * Drop file "File" to "Selector"
+Прерносит файл из папки Fixtures в указанную область (импортирует файл).
+```
+* Drop file "Nomenklatura.xlsx" to "Grid"
+```
 
-```* Drag "DndElement" and drop before "DndElement"```
-
-Можно перенести над каким-то элементом
-
-```* Drag "DndElement" and drop after "DndElement"```
-
-Можно перенести под какой-то элемент
-
-
-## 34) * Drop file "File" to "Selector"
-```* Drop file "Nomenklatura.xlsx" to "Grid"```
-
-Шаги для переноса файлов из папки Fixtures в наш грид или еще какую-то область. Это позволяет сделать импорт подготовленного файла
-
-
-## 35) Stop / Do not stop and show "red/green" text "Text" at position "Top/Middle/Bottom" for [Number] seconds
+### 35) Stop / Do not stop and show "red/green" text "Text" at position "Top/Middle/Bottom" for [Number] seconds
+Показ титров.
 ```* "Stop" and show "red" text "Hello!!!" at the "Top" for [10] seconds```
 Шаг выведет текст с нужным цветом расположенный в указанном месте на протяжении определенного времени
 
