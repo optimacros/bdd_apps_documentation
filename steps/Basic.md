@@ -309,40 +309,43 @@ ___Предыдущий шаг тоже кликает на инпут. Разн
 
 # 6. Нажатие клавиш клавиатуры
 
-### 1. * Create a manual backup with a hotkey
+### 6.1. * Open the context menu with a hotkey
+Открывает диалоговое окно (комбинация клавиш CTRL + Q).
+
+### 6.2. * Create a manual backup with a hotkey
 Создание бекапа модели (комбинация клавиш CTRL + S).
 
-### 2. * Recalculate model with a hotkey
+### 6.3. * Recalculate model with a hotkey
 Включает пересчет модели (нажимает клавишу F9)
 
-### 3. * Press "Key"
+### 6.4. * Press "Key"
 Нажимает клавишу клавиатуры один раз.
 ```
 * Press "Enter"
 * Press "ARROW_DOWN"
 ```
 
-### 4. * Press "Key" [Number] times
+### 6.5. * Press "Key" [Number] times
 Нажимает клавишу клавиатуры несколько раз.
 ```
 * Press "ARROW_DOWN" [5] times
 ```
 
-### 5. * Press "Key" with "Key2"
+### 6.6. * Press "Key" with "Key2"
 Нажимает клавишу клавиатуры с зажатой клавишой Key2.
 ```
 * Press "ARROW_RIGHT" with "SHIFT"
 * Press "PAGEDOWN" with "SHIFT"
 ```
 
-### 6. * Press "Key" with "Key2" [Number] times
+### 6.7. * Press "Key" with "Key2" [Number] times
 Нажимает клавишу клавиатуры с зажатой клавишой Key2 несколько раз.
 ```
 * Press "ARROW_RIGHT" with "SHIFT" [9] times
 * Press "PAGEDOWN" with "SHIFT" [3] times
 ```
 
-### 7. * Press "Key" with "Key2" and "Key3"
+### 6.8. * Press "Key" with "Key2" and "Key3"
 Нажимает клавишу клавиатуры с зажатыми клавишами Key2 и Key3.
 ```
 * Press "L" with "SHIFT" and "ALT"
