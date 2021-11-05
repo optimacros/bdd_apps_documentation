@@ -1,45 +1,45 @@
 
 # Basic-шаги (Часто используемые)
 
-## Сервисные шаги
+## 1. Сервисные шаги
 
-### 1) * Start with an isolated model "ModelName"
+### 1. * Start with an isolated model "ModelName"
 Создает копию модели (изолированную модель) и запускает ее.
 
-### 2) * Start with a not isolated model "ModelName"
+### 2. * Start with a not isolated model "ModelName"
 Запускает оригинальную (не изолированную) модель.
 
-### 3) * Start as a "User"
+### 3. * Start as a "User"
 Запускает приложение с правами доступа определенного пользоваля, например: Modeller, Developer, Not Modeller.
 
-### 4) * Delete the current model
+### 4. * Delete the current model
 Удаляет ранее созданную копию модели (изолированную модель).
 
 ***Нужно быть осторожным, если вы запустите тест в оригинальной модели, то шаг удалит вашу модель!***
 
-### 5) * Go to page Drive Landing
+### 5. * Go to page Drive Landing
 Открывает страницу Drive Landing.
 
-### 6) * Go to page Contents Page
+### 6. * Go to page Contents Page
 Открывает страницу Contents Page.
 
-### 7) * Open tab "ModuleName"
+### 7. * Open tab "ModuleName"
 Переходит на страницу Contents и открывает вкладку с указанным именем.
 
-### 8) * Reload Page
+### 8. * Reload Page
 Перезагружает страницу.
 
-### 24) * Wait until the modal form is open
+### 9. * Wait until the modal form is open
 Ожидает открытие модального окна.
 
 ## Проверка существования элементов
 
-### 9) * Check if the Grid exists and loaded
+### 1. * Check if the Grid exists and loaded
 Шаг проверят загрузку грида и отсуствие лоадера. Часто применяется после открытия нового грида или изменения состояния грида на котором находится пользователь. Когда заведомо известно, что грид должен загрузиться или обновиться, то применяем этот шаг. Можно не применять его если мы проверяем какие-то элементы в гриде. Например мы вошли в новый грид, проверили существование колонки с определенным названием или строки и это гарантирует нам что грид загружен, иначе элементов видно небыло-бы без загрузки грида.
 
 __*Мне не нравится это описание - много текста. Подумай как убрать лишнее.*__
 
-### 10) * Check if "Selector" exists
+### 2. * Check if "Selector" exists
 Проверяет существование элемента на странице.
 ```
 * Check if "Modal" exists
@@ -47,7 +47,7 @@ __*Мне не нравится это описание - много текст�
 * Check if "Any Loader" exists
 ```
 
-### 11) * Check if "Selector" does not exist
+### 3. * Check if "Selector" does not exist
 Проверяет отсутствие элемента на странице.
 ```
 * Check if "Modal" does not exist
@@ -69,29 +69,29 @@ __*Мне не нравится это описание - много текст�
 * Check if "Row Header(Балтика)" does not exist
 ```
 
-### 12) * Check if "Selector" contains "Text"
+### 4. * Check if "Selector" contains "Text"
 Проверяет что элемент содержит текст.
 ```
 * Check if "Modal > Sample Value" contains "-1,234.56789"
 ```
 Проверяет что в модальном окне есть текст `-1,234.56789`.
 
-### 13) * Check if "Selector" does not contain "Text"
+### 5. * Check if "Selector" does not contain "Text"
 Проверяет что элемент не содержит текст.
 
-### 14) * Check if "Selector" attribute value equals to "Value"
+### 6. * Check if "Selector" attribute value equals to "Value"
 Проверяет значение в инпуте.
 ```
 * Check if "Modal > Input(dependOn)" attribute value equals to "1.2 Контрагенты"
 ```
 
-### 15) * Check if "Selector" property value equals to "Value"
+### 7. * Check if "Selector" property value equals to "Value"
 Проверяет свойство property у определенного элемента.
 ```
 * Check if "Grid Cell Editor" property value equals to "VCAR_01_01"
 ```
 
-### 16) * Check if the property value for "CollName" and "RowName" equals to "Value"
+### 8. * Check if the property value for "CollName" and "RowName" equals to "Value"
 Проверяет значение в ячейке на пересечении строки и колонки с именами.
 ```
 * Check if the property value for "О1.2" and "Text col with data" equals to "444"
@@ -100,7 +100,7 @@ __*Мне не нравится это описание - много текст�
 - Text col with data - название строки. 
 - 444 - данные в ячейке
 
-### 17) * Check if the elements in the grid match:
+### 9. * Check if the elements in the grid match:
 Проверяет что грид содержит значения.
 ```JavaScript 
 * Check if the elements in the grid match:
@@ -111,7 +111,7 @@ __*Мне не нравится это описание - много текст�
 
 Есть возможность не указывать значения клеток **|  |** оставить контейнер пустым
 
-### 18) * Check if the elements in the grid do not match:
+### 10. * Check if the elements in the grid do not match:
 Проверяет что грид содержит значения.
 ```JavaScript 
 * Check if the elements in the grid do not match:
@@ -119,14 +119,14 @@ __*Мне не нравится это описание - много текст�
     | 1:-1 | cube 2 |  2 | В2 |
 ```
 
-### 18) * Check if the elements in context ""DashboardSelector"" grid match:
+### 11. * Check if the elements in context ""DashboardSelector"" grid match:
 Проверяет что грид в карточке дашборда содержит значения.
 ```JavaScript 
 * Check if the elements in context ""DashboardSelector"" grid match:
   | 0:-1 | Value | Value | Value |
   | 1:-1 | Value | Value | Value |
 ```
-### 18) * Check if the elements in context "DashboardSelector" grid do not match:
+### 12. * Check if the elements in context "DashboardSelector" grid do not match:
 Проверяет что грид в карточке дашборда не содержит значения.
 ```JavaScript 
 * Check if the elements in context "DashboardSelector" grid do not match:
@@ -134,16 +134,16 @@ __*Мне не нравится это описание - много текст�
   | 1:-1 | Value | Value | Value |
 ```
 
-### 19) * Сheck if the input value in "Selector" equals to "Value"
+### 13. * Сheck if the input value in "Selector" equals to "Value"
 Проверяет что введенный в поле ввода текст равен значению.
 
-### 22) * Check if "Selector" with text "Text" is active
+### 14. * Check if "Selector" with text "Text" is active
 Проверяет что вкладка с названием “Text” активна.
 ```
 * Check if "Tab Header" with text "Half Years" is active
 ```
 
-### 23) * Check if "Selector" with text "Text" is not active
+### 15. * Check if "Selector" with text "Text" is not active
 Проверяет что вкладка с названием “Text” не активна.
 ```
 * Check if "Tab Header" with text "Half Years" is not active
@@ -151,13 +151,13 @@ __*Мне не нравится это описание - много текст�
 
 ## Работа с Инпутами
 
-### 25) * Clear value in "Selector"
+### 1. * Clear value in "Selector"
 Очищает значения в поле input. В качестве аргумента указывается атрибут Name нужного input.
 ```
 * Clear value in "Conditional Formatting(Maximum) > Input"
 ```
 
-### 27) * Type "Text" into "Selector"
+### 2. * Type "Text" into "Selector"
 Печатает текст в инпуте.
 ```
 * Type "20" into "Input(fontSize)"
@@ -166,7 +166,7 @@ ___Вообще не понятно что тут написано. Нужно �
 Шаг введет данные в поле ввода(Input) с атрибутом *Name* числом *20*.
 Узнать атрибут Name у Input можно инспектором кода у браузера.
 
-### 28) * Type the text into "Selector":
+### 3. * Type the text into "Selector":
 Печатает текст в инпуте.
 ```JavaScript 
 * Type the text into "Input(entityCount)":
@@ -178,94 +178,94 @@ ___Вообще не понятно что тут написано. Нужно �
 Этот шаг универсальней предыдущего.. Он сам кликнет на нужный инпут и наберет в нем текст
 ___Предыдущий шаг тоже кликает на инпут. Разница в том, что этот шаг используется для ввода нескольких строк текста. Нужно переписать.___
 
-### 29) * Type "Text"
+### 4. * Type "Text"
 Печатает текст. Предварительно нужно сфокусироваться на поле ввода.
 
-### 30) * Set "Value" of the cell at the intersection of "CollName" and "RowName"
+### 5. * Set "Value" of the cell at the intersection of "CollName" and "RowName"
 Выбирает определенный пункт в выпадающем списке ячейки на пересечении строки и колонки.
 ```
 * Set "E-Property" of the cell at the intersection of "Enumerated List" and "Display Name Property"
 ```
 
-### 31) * Type "Text" into the cell at the intersection of "CollName" and "RowName"
+### 6. * Type "Text" into the cell at the intersection of "CollName" and "RowName"
 Печатает текст в ячейке на пересечении колонки и строки.
 ```
 * Type "renamed" into the cell at the intersection of  "Code" and  "#5487"
 ```
 
-### 32) * Type "Text" into the cell at the intersection of "CollName" and the row number [Number]
+### 7. * Type "Text" into the cell at the intersection of "CollName" and the row number [Number]
 Печатает текст в ячейке на пересечении колонки с именем и строки с номером.
 
 ## Drag and Drop
-### 33) * Drag "DndElement" and drop into "DndZone"
+### 1. * Drag "DndElement" and drop into "DndZone"
 Перетаскивает DND элемент в указанную DND зону.
 ```
 * Drag "Dnd Element(2.2 Клиенты)" and drop it into "Dnd Zone(Pages)"
 ```
 
-### 33) * Drag "DndElement" and drop before "Element"
+### 2. * Drag "DndElement" and drop before "Element"
 Захватывает левой клавишей мыши DND элемент, перетаскивает его и бросает перед указанным элементом.
 ```
 * Drag "Dnd Zone(Available) > Dnd Element(Бренды)" and drop it before "Dnd Element(Filters)"
 ```
 
-### 33) * Drag "DndElement" and drop after "DndZone"
+### 3. * Drag "DndElement" and drop after "DndZone"
 Захватывает левой клавишей мыши DND элемент, перетаскивает его и бросает после указанного элемента.
 ```
 * Drag "Dnd Zone(Available) > Dnd Element(Versions)" and drop it after "Dnd Element(Filters)"
 ```
 
-### 34) * Drop file "File" to "Selector"
+### 4. * Drop file "File" to "Selector"
 Прерносит файл из папки Fixtures в указанную область (импортирует файл).
 ```
 * Drop file "Nomenklatura.xlsx" to "Grid"
 ```
 
-### 35) Stop / Do not stop and show "red/green" text "Text" at position "Top/Middle/Bottom" for [Number] seconds
+### 5. Stop / Do not stop and show "red/green" text "Text" at position "Top/Middle/Bottom" for [Number] seconds
 Показ титров.
 ```* "Stop" and show "red" text "Hello!!!" at the "Top" for [10] seconds```
 Шаг выведет текст с нужным цветом расположенный в указанном месте на протяжении определенного времени
 
 
-# Действия с Элементами
+## Действия с Элементами
 
-### * Click on "Selector"
+### 1. * Click on "Selector"
 Делает клик левой клавишей мыши по элементу
 ```
 * Click on "Tab Header(Settings)"
 ```
 
-### * Right click on "Selector"
+### 2. * Right click on "Selector"
 Делает клик правой клавишей мыши по элементу
 ```
 * Right click on "Grid Cell(2:1)"
 ```
 
-### * Double click on "Selector"
+### 3. * Double click on "Selector"
 Делает двойной клик левой клавишей мыши по элементу
 ```
 * Double click on "Card Of Dashboards(Editable Module) > Grid Cell(0:4)"
 ```
 
-### * Hover over "Selector"
+### 4. * Hover over "Selector"
 Наводит курсор мыши на элемент
 ```
 * Hover over "Card Of Dashboards(Multicubes – Cubes) > SwitchToolbar"
 ```
 
-### * Click on "Selector" while holding "Key"
+### 5. * Click on "Selector" while holding "Key"
 Делает клик левой клавишей мыши по элементу с зажатой клавишей клавиатуры
 ```
 * Click on "Row Header(4:-2, Line Item 3)" while holding "CONTROL"
 ```
 
-### * Right click on "Selector" while holding "Key"
+### 6. * Right click on "Selector" while holding "Key"
 Делает клик правой клавишей мыши по элементу с зажатой клавишей клавиатуры
 ```
 * Right click on "Grid Cell(37:13)" while holding "SHIFT"
 ```
 
-### * Click on text "Text" in "Selector"
+### 7. * Click on text "Text" in "Selector"
 Делает клик левой клавишей мыши по тексту в элементе
 ```
 * Click on text "4500" in "Search Results"
@@ -275,32 +275,32 @@ ___Предыдущий шаг тоже кликает на инпут. Разн
 клик по кнопке с названием Apply & Save в модальном окне
 ```
 
-### * Click on "HeaderMenuElement" in "HeaderMenu"
+### 8. * Click on "HeaderMenuElement" in "HeaderMenu"
 Делает клик левой клавишей мыши по элементу, расположенному в Header Menu первого уровня.
 ```
 * Click on "Header Menu Element(Lists)" in "Header Menu Element(Dimensions)"
 ```
 
-### * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement"
+### 9. * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement"
 Делает клик левой клавишей мыши по элементу, расположенному в Header Menu второго уровня.
 ```
 * Click on "Header Menu Element(1.1 Countries)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Lists)"
 ```
 
-### * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement" in "HeaderMenuElement"
+### 10. * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement" in "HeaderMenuElement"
 Делает клик левой клавишей мыши по элементу, расположенному в Header Menu третьего уровня.
 ```
 * Click on "Header Menu Element(Add Subset in Quarters)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Time)" in "Header Menu Element(Quarters)"
 ```
 
-### 39) * Select element "Option" in "Selector"
+### 11. * Select element "Option" in "Selector"
 Выбирает опцию в выпадающем списке указанного дропдауна.
 ```
 * Select element "Start" in "Modal > Dropdown(position)"
 * Select element "UTF-8" in "Dropdown(encoding)"
 ```
 
-### 40) * Change the filter from "OldFilter" to "NewFilter"
+### 12. * Change the filter from "OldFilter" to "NewFilter"
 Меняет фильтр с OldFilter на NewFilter.
 ```
 * Change the filter from "Budget" to "Actual"
@@ -309,40 +309,40 @@ ___Предыдущий шаг тоже кликает на инпут. Разн
 
 # Нажатие клавиш клавиатуры
 
-### 41) * Create a manual backup with a hotkey
+### 1. * Create a manual backup with a hotkey
 Создание бекапа модели (комбинация клавиш CTRL + S).
 
-### 42) * Recalculate model with a hotkey
+### 2. * Recalculate model with a hotkey
 Включает пересчет модели (нажимает клавишу F9)
 
-### 43) * Press "Key"
+### 3. * Press "Key"
 Нажимает клавишу клавиатуры один раз.
 ```
 * Press "Enter"
 * Press "ARROW_DOWN"
 ```
 
-### 4) * Press "Key" [Number] times
+### 4. * Press "Key" [Number] times
 Нажимает клавишу клавиатуры несколько раз.
 ```
 * Press "ARROW_DOWN" [5] times
 ```
 
-### 5) * Press "Key" with "Key2"
+### 5. * Press "Key" with "Key2"
 Нажимает клавишу клавиатуры с зажатой клавишой Key2.
 ```
 * Press "ARROW_RIGHT" with "SHIFT"
 * Press "PAGEDOWN" with "SHIFT"
 ```
 
-### 5) * Press "Key" with "Key2" [Number] times
+### 6. * Press "Key" with "Key2" [Number] times
 Нажимает клавишу клавиатуры с зажатой клавишой Key2 несколько раз.
 ```
 * Press "ARROW_RIGHT" with "SHIFT" [9] times
 * Press "PAGEDOWN" with "SHIFT" [3] times
 ```
 
-### 6) * Press "Key" with "Key2" and "Key3"
+### 7. * Press "Key" with "Key2" and "Key3"
 Нажимает клавишу клавиатуры с зажатыми клавишами Key2 и Key3.
 ```
 * Press "L" with "SHIFT" and "ALT"
@@ -351,93 +351,110 @@ ___Предыдущий шаг тоже кликает на инпут. Разн
 Список клавиш - https://github.com/puppeteer/puppeteer/blob/main/src/common/USKeyboardLayout.ts
 
 ---
-# Шаги связанные со скролом
+## Шаги связанные со скролом
 
-## 44) * Scroll the vertical scrollbar to the down
-Вертикальный скролл грида проскролится в самый низ. Так-же можно проскролить этим шагом к началу или середине грида - *top* и *middle*
+### 1. * Scroll the vertical scrollbar to the top
+Скроллит грид вертикально вверх.
+
+### 2. * Scroll the vertical scrollbar to the middle
+Скроллит грид вертикально вцентр.
+
+### 3. * Scroll the vertical scrollbar to the bottom
+Скроллит грид вертикально вниз.
+
+### 4. * Scroll the horizontal scrollbar to the start
+Скролит грид горизонтально в начало.
+
+### 5. * Scroll the horizontal scrollbar to the middle
+Скролит грид горизонтально в центр.
+
+### 6. * Scroll the horizontal scrollbar to the end
+Скролит грид горизонтально в конец.
+
+### 7. * Scroll the kanban vertical scrollbar to the top
+Скроллит канбан вертикально вверх.
+
+### 8. * Scroll the kanban vertical scrollbar to the middle
+Скроллит канбан вертикально вцентр.
+
+### 9. * Scroll the kanban vertical scrollbar to the bottom
+Скроллит канбан вертикально вниз.
+
+### 10. * Scroll the kanban horizontal scrollbar to the start
+Скроллит канбан горизонтально в начало.
+
+### 11. * Scroll the kanban horizontal scrollbar to the middle
+Скроллит канбан горизонтально в центр.
+
+### 12. * Scroll the kanban horizontal scrollbar to the end
+Скроллит канбан горизонтально в конец.
+
+### 13. * Scroll the "vertical" "Selector" by [Number] pixels
+Скроллит элемент вертикально на определенное количество пикселей.
 ```
-* Scroll the vertical scroller to the middle
-* Scroll the vertical scroller to the top
-```
-
-## 45) * Scroll the horizontal scrollbar to the start
-Горизонтальный скролл в гриде. Можно в начало, середину и конец страницы проскролить - *end* или *middle*
-```
-* Scroll the horizontal scrollbar to the middle
-* Scroll the horizontal scrollbar to the end
-```
-
-## 46) * Scroll the "vertical" "Selector" by [Number] pixels
-```* Scroll "vertical" "Modal > Dnd Zone(Free) > scroller" by "350" pixels```
-Скролл вертикальный на 350px в модальном окне DND зоны с названием Free
-```
-* Scroll the "horizontal" "Selector" by [Number] pixels
-* Scroll "horizontal" "Card of Dashboards(5.2 Вид РИМ) > scroller" by "300" pixels
-```
-
-Аналогично вертикальному можно сделать и горизонтальный скролл, правда в этом примере у карточки дашборда с определенным названием на 300px.
-Сама карточка дашборда и скроллер должен попадать в зону видимости, иначе шаг не сможет проскролить.
-
-
-## 47) * Check if the "vertical" scrollbar is scrolled by [Number] pixels
-```* Check if the "horizontal" scrollbar is scrolled by [Number] pixels```
-
-Шаги по проверке того, где находится скролл по горизонтали и вертикали в гриде.
-
-
-## 48) * Check if the "vertical" "Selector" was scrolled by [Number] pixels
-```
-* Check if the "horizontal" "Card of Dashboards(big list) > scroller" was scrolled by "400" pixels
-* Check if the "vertical" "Modal > Tree Menu > scroller" was scrolled by "104" pixels
-```
-
-В этих шагах проверяется конкректный скролл. 
-
-## 49) * Scroll "Selector" to the "top/bottom/left/right" by [Number] pixels
-
-
-## 50)    * Scroll the vertical scrollbar to the element "Selector"
-Проскролить до нужной строки с названием
-
-## 51)    * Scroll the kanban vertical scrollbar to the top
-Вертикальный скролл в Kanban
-```
-* Scroll the kanban vertical scrollbar to the middle
-* Scroll the kanban vertical scrollbar to the bottom
+* Scroll the "vertical" "Modal > Dnd Zone(Available) > scroller" by [500] pixels
 ```
 
-## 52)    * Scroll the kanban horizontal scrollbar to the start
-Горизонтальный скролл в Kanban
+### 14. * Scroll the "horizontal" "Selector" by [Number] pixels
+Скроллит элемент горизонтально на определенное количество пикселей.
 ```
-* Scroll the kanban horizontal scrollbar to the middle
-* Scroll the kanban horizontal scrollbar to the end
+* Scroll the "horizontal" "Card of Dashboards(big list) > scroller" by [400] pixels
 ```
 
-# Шаги с инсертом элементов
+### 15. * Scroll "Selector" to the "top/bottom/left/right" by [Number] pixels
+Скролит элемент вверх, вниз, влево или вправо на определенное количество пикселей.
+```
+* Scroll "Modal > Chart Scroll Conteiner" to the "down" by [350] pixels
+* Scroll "Modal > Chart Scroll Conteiner" to the "top" by [350] pixels
+* Scroll "Modal > Chart Scroll Conteiner" to the "left" by [350] pixels
+* Scroll "Modal > Chart Scroll Conteiner" to the "right" by [350] pixels
+```
 
-## 53) * Insert elements "Elements" at position "start/end/after/before":
+### 16. * Check if the "vertical/horizontal" scrollbar is scrolled by [Number] pixels
+Проверяет что грид проскролен вертикально или горизонтально на определенное количество пикселей.
+```
+* Check if the "vertical" scrollbar is scrolled by [300] pixels
+* Check if the "horizontal" scrollbar is scrolled by [500] pixels
+```
+
+### 17. * Check if the "vertical/horizontal" "Selector" was scrolled by [Number] pixels
+Проверяет что элемент проскролен вертикально или горизонтально на определенное количество пикселей
+```
+* Check if the "vertical" "Modal > Tree Menu > scroller" was scrolled by [1300] pixels
+* Check if the "horizontal" "Card of Dashboards(big list) > scroller" was scrolled by [250] pixels
+```
+
+## Шаги с инсертом элементов
+
+### 1. * Insert elements "Elements" at position "start/end/after/before":
+Добавление именованных элементов.
 ```JavaScript 
-* Insert elements "Elements" at position "start/end/after/before":
-    """
-    Test Half Subset 1
-    Test Half Subset 2
-    """
+* Insert elements "Context Tables" at position "before":
+  “““
+   CT 4
+   CT 5
+  “““
+* Insert elements "Lists" at position "start":
+  “““
+   List 3
+   List 1
+  “““
 ```
+Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets) with Names" - это множественный именованный инсерт, вводит название элементов в поле Textarea, выбирает позицию в выпадающем списке и нажимает кнопку Ok.
 
-Шаг выполяющий несколько итераций. Кликает на кнопку Add (название кнопки, например Subsets) with Names - это множественный именованный инсерт.
-Далее вводит название элементов в поле Textarea, выбирает позицию Start в выпадающем списке и нажимает кнопку Ok.
-Если делать Named Insert справочника с позицией After, то шаг будет выглядеть так - *When I insert "Lists" elements at the "After":*
+### 2. * Insert [Number] elements into "Element" at position "start/end/after/before/child of"
+Добавление неименованных элементов.
+```
+* Insert [5] elements into "Lists" at position "after"
+```
+Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets)" - это множественный **не**именованный инсерт, вводит колличество элементов в input, выбирает позицию в выпадающем списке и нажимает кнопку Ok.
 
-
-## 54) * Insert [Number] elements into "Element" at position "start/end/after/before/child of"
-Шаг выполяющий несколько итераций. Кликает на кнопку Add (название кнопки, например Subsets) - Это множественный **не**именованный инсерт.
-Далее вводит колличество элементов в input, выбирает позицию Start в выпадающем списке и нажимает кнопку Ok.
-
-
-## 55) * Save the current view as "NewViewName"
-Сохранение новой вьюхи МК. Для этого нужно находиться в нужном МК и шаг нажмет на кнопку View в Toolbar, выберет в выпадающем списке пункт Save As, в появившемся модальном окне запишет название новой вьюхи, все чекбоксы останутся дефолтными и кликнет на кнопку OK
-
-
+### 3. * Save the current view as "NewViewName"
+Сохраняет новую вьюху.
+```
+* Save the current view as "Test View Tab"
+```
+Для этого нужно находиться в нужном МК и шаг нажмет на кнопку View в Toolbar, выберет в выпадающем списке пункт Save As, в появившемся модальном окне запишет название новой вьюхи, все чекбоксы останутся дефолтными и кликнет на кнопку OK
 
 [Список всех шагов](../steps/allSteps.md)
 
