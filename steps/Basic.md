@@ -227,97 +227,128 @@ ___Предыдущий шаг тоже кликает на инпут. Разн
 Шаг выведет текст с нужным цветом расположенный в указанном месте на протяжении определенного времени
 
 
-# Шаги связанные с кликом, наведением и выбором элемента
+# Действия с Элементами
 
-## Группа шагов
+### * Click on "Selector"
+Делает клик левой клавишей мыши по элементу
 ```
-* Click on "Selector" - клик по селектору
-* Right click on "Selector" - клип по селектору правой кнопкой мыши
-* Double click on "Selector" - двойной клик по элементу
-* Press and hold down the mouse button at "Selector" - нажать на селектор и не отпускать кнопку мыши (например для группового выделения в связке с шагом ниже)
-* Release the mouse button at "Selector" - перетаскивание выделения до определенного селектора (например для группового выделения в связке с шагом выше)
-* Hover over "Selector" - сфокуссироваться на элементе (наведение мыши)
+* Click on "Tab Header(Settings)"
 ```
 
-## 36) * Click on "Selector" while holding "Key"
-Шаг может кликнуть по чему-то с зажатой клавишей *SHIFT* или *Alt* и др.
+### * Right click on "Selector"
+Делает клик правой клавишей мыши по элементу
+```
+* Right click on "Grid Cell(2:1)"
+```
 
+### * Double click on "Selector"
+Делает двойной клик левой клавишей мыши по элементу
+```
+* Double click on "Card Of Dashboards(Editable Module) > Grid Cell(0:4)"
+```
 
-## 37) * Click on text "Text" in "Selector"
-Шаг предназначеный для клика по тексту в каком-то селекторе.
-В данном примере произошел клик по фильтру с текстом Клин
+### * Hover over "Selector"
+Наводит курсор мыши на элемент
+```
+* Hover over "Card Of Dashboards(Multicubes – Cubes) > SwitchToolbar"
+```
 
-** `*` Click on text "003" in "Tree Menu Element"** а в этом случае клик по тексту в открвшемся выпадающем списке фильтра.
+### * Click on "Selector" while holding "Key"
+Делает клик левой клавишей мыши по элементу с зажатой клавишей клавиатуры
+```
+* Click on "Row Header(4:-2, Line Item 3)" while holding "CONTROL"
+```
 
-** `*` Click on text "Apply & Save" in "Modal"** или когда есть недопустимые символы для других шагов, этот шаг сможет кликнуть на кнопку с названием Apply & Save в модальном окне
+### * Right click on "Selector" while holding "Key"
+Делает клик правой клавишей мыши по элементу с зажатой клавишей клавиатуры
+```
+* Right click on "Grid Cell(37:13)" while holding "SHIFT"
+```
 
+### * Click on text "Text" in "Selector"
+Делает клик левой клавишей мыши по тексту в элементе
+```
+* Click on text "4500" in "Search Results"
+* Click on text "#221" in "Tree Menu Element"
+клик по тексту в открывшемся выпадающем списке фильтра
+* Click on text "Apply & Save" in "Modal"
+клик по кнопке с названием Apply & Save в модальном окне
+```
 
-## 38) * Click on "Header Menu Element(1. Товарные группы)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Lists)"
-Шаг открывает справочник который находится в иерархичном выпадающем меню. Для этого мы должны указать пункт меню Dimensions. В шаге произойдет фокусировка на этот элемент приложения. Почему именно на пункт меню сверху? Потому как Header Menu Element это прописанный селектор, название интерпритировано на человеческий язык, а внутри селектора лежит идентификтор по которому собественно и происходит вызов элемента.. В данном случае это класс **HeaderMenu__MenuItem**
+### * Click on "HeaderMenuElement" in "HeaderMenu"
+Делает клик левой клавишей мыши по элементу, расположенному в Header Menu первого уровня.
+```
+* Click on "Header Menu Element(Lists)" in "Header Menu Element(Dimensions)"
+```
 
-```* Click on "Header Menu Element(Lists)" in "Header Menu Element(Dimensions)"```
+### * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement"
+Делает клик левой клавишей мыши по элементу, расположенному в Header Menu второго уровня.
+```
+* Click on "Header Menu Element(1.1 Countries)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Lists)"
+```
 
-Этот шаг работает по тому же принципу что и шаг выше, но в нём двойная вложенность.
+### * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement" in "HeaderMenuElement"
+Делает клик левой клавишей мыши по элементу, расположенному в Header Menu третьего уровня.
+```
+* Click on "Header Menu Element(Add Subset in Quarters)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Time)" in "Header Menu Element(Quarters)"
+```
 
-```* Click on "Header Menu Element(Dimensions)"```
+### 39) * Select element "Option" in "Selector"
+Выбирает опцию в выпадающем списке указанного дропдауна.
+```
+* Select element "Start" in "Modal > Dropdown(position)"
+* Select element "UTF-8" in "Dropdown(encoding)"
+```
 
-Шаг для клика по одному селектору с аргументом или если не указывать аргумент, то шаг нажмет на первый селектор в DOM дереве.
+### 40) * Change the filter from "OldFilter" to "NewFilter"
+Меняет фильтр с OldFilter на NewFilter.
+```
+* Change the filter from "Budget" to "Actual"
+* Change the filter from "All Dimensions in Multicube" to "Rows"
+```
 
-```* Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement" in "HeaderMenuElement"```
-
-
-## 39) * Select element "Option" in "Selector"
-Шаг выберет опцию в выпадающем списке указанного дропдауна
-```* Select element "Start" in "Modal > Dropdown(position)"```
-
-
-## 40) * Change the filter from "OldFilter" to "NewFilter"
-Смена фильтра где мы указываем старый фильтр и тот на который переключим
-
----
 # Нажатие клавиш клавиатуры
 
-## 41) * Create a manual backup with a hotkey
-Создание бекапа, в этом шаге заложено нажатие клавиш CTRL + S. Можно воспользоваться напрямую горячими клавишами если удобно
+### 41) * Create a manual backup with a hotkey
+Создание бекапа модели (комбинация клавиш CTRL + S).
 
+### 42) * Recalculate model with a hotkey
+Включает пересчет модели (нажимает клавишу F9)
 
-## 42) * Recalculate model with a hotkey
-В шаге заложено нажа
-
-
-## 43) * Press "Key"
-```* Press "Enter"```
-
-Шаг нажмет клавишу *Enter* или можно передавать другой аргумент в шаг. Список клавиш - https://github.com/puppeteer/puppeteer/blob/main/src/common/USKeyboardLayout.ts
-
+### 43) * Press "Key"
+Нажимает клавишу клавиатуры один раз.
 ```
-* Press "Key" [Number] times
+* Press "Enter"
+* Press "ARROW_DOWN"
+```
+
+### 4) * Press "Key" [Number] times
+Нажимает клавишу клавиатуры несколько раз.
+```
 * Press "ARROW_DOWN" [5] times
 ```
-Шаг нажимает клавишу *Down* 15 раз. Т.е. шаг может любое колличество раз нажать на нужную нам клавишу
 
+### 5) * Press "Key" with "Key2"
+Нажимает клавишу клавиатуры с зажатой клавишой Key2.
 ```
-* Press "Key" with "Key2"
+* Press "ARROW_RIGHT" with "SHIFT"
 * Press "PAGEDOWN" with "SHIFT"
 ```
-Нажимает последовательно 2 клавиши клавиатуры
 
+### 5) * Press "Key" with "Key2" [Number] times
+Нажимает клавишу клавиатуры с зажатой клавишой Key2 несколько раз.
 ```
-* Press "Key" with "Key2" [Number] times
 * Press "ARROW_RIGHT" with "SHIFT" [9] times
+* Press "PAGEDOWN" with "SHIFT" [3] times
 ```
-Шаг зажмет клавишу *Shift* и будет нажимать клавишу *Right* 9 раз подряд
 
-```* Press "E" with "SHIFT" with "CONTROL"```
-
-Соответственно шаг нажмет клавишу *CTRL* c жажатым *Shift* и *E*
-
+### 6) * Press "Key" with "Key2" and "Key3"
+Нажимает клавишу клавиатуры с зажатыми клавишами Key2 и Key3.
 ```
-* Press "Key" with "Key2" and "Key3"
-* Press "Key" with "Key2" and "Key3" [Number] times
+* Press "L" with "SHIFT" and "ALT"
+* Press "E" with "SHIFT" and "CONTROL"
 ```
-Если понадобится, то можно нажать комбинацию и из трех клавиш несколько раз или один раз
-
+Список клавиш - https://github.com/puppeteer/puppeteer/blob/main/src/common/USKeyboardLayout.ts
 
 ---
 # Шаги связанные со скролом
