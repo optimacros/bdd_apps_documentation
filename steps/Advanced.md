@@ -121,13 +121,12 @@
 * Check if the value is empty in "Formula Input"
 ```
 
-### 4.4.
-###    * Сheck if "Selector" is checked
-###    * Сheck if "Selector" is not checked
-###    * Сheck if "Selector" is disabled
-###    * Сheck if "Selector" is not disabled
-###    * Сheck if "Selector" is active
-###    * Сheck if "Selector" is selected
+### 4.4. * Сheck if "Selector" is checked
+### * Сheck if "Selector" is not checked
+### * Сheck if "Selector" is disabled
+### * Сheck if "Selector" is not disabled
+### * Сheck if "Selector" is active
+### * Сheck if "Selector" is selected
 Шаги проверяют свойства элементов.
 ```
 * Сheck if "GridCell(4:2) > Checkbox" is checked
