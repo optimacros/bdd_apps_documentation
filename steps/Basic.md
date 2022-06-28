@@ -19,34 +19,41 @@
 ### 1.2. * Start with a not isolated model "ModelName"
 Запускает оригинальную (не изолированную) модель
 
-### 1.3. * Start as a "User"
+### 1.3. * Start app with Drive Landing page
+Открывает страницу Drive Landing
+
+### 1.4. * Start as a "User"
 Запускает приложение с правами доступа определенного пользоваля, например: Modeller, Developer, Not Modeller
 
-### 1.4. * Delete the current model
+### 1.5. * Delete the current model
 Удаляет ранее созданную копию модели (изолированную модель)
 
 ***Нужно быть осторожным, если вы запустите тест в оригинальной модели, то шаг удалит вашу модель!***
 Обязательно проверить, шаг старта. Должен быть 1.1. * Start with an isolated model "ModelName"
 
-### 1.5. * Go to page Drive Landing
-Открывает страницу Drive Landing
+### 1.6. * Go to page Drive Landing
+Переходит на страницу Drive Landing
 
-### 1.6. * Go to page Contents Page
-Открывает страницу Contents Page
+### 1.7. * Go to page Contents Page
+Переходит страницу Contents Page
 
-### 1.7. * Clean temp models in current workspace
+### 1.8. * Clean temp models in current workspace
 Удаляет временные модели в текущей рабочей области
 
-### 1.8. * Open tab "ModuleName"
+### 1.9. * Open tab "ModuleName"
 Переходит на страницу Contents и открывает вкладку с указанным именем
 
-### 1.9. * Close tab "ModuleName"
+### 1.10. * Close tab "ModuleName"
 Закрывает вкладку с указанным именем
+```
+* Close tab "Заявки"
+* Close tab "Main Dashboard"
+```
 
-### 1.10. * Reload Page
+### 1.11. * Reload Page
 Перезагружает страницу (браузер). Шаг включает в себя проверку существования глобального лоадера и дожидается отсутствия лоадеров
 
-### 1.11. * Wait until the modal form is open
+### 1.12. * Wait until the modal form is open
 Ожидает открытие модального окна и проверяет отсутствие лоадера
 
 
