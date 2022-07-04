@@ -23,14 +23,14 @@
 ```
 * Delete model "New Test Model"
 ```
-Шаг включает в себя выбор элемента Delete через правый клик, проверку лоадера и его отсутствие
+Шаг делает правый клик по модели и выбирает элемент Delete, проверяет лоадер и его отсутствие
 
 ### 1.4. * Delete folder "FolderName"
 Удаляет папку с именем на странице Drive Landing
 ```
 * Delete folder "New Test Folder"
 ```
-Шаг включает в себя выбор элемента Delete через правый клик и проверку лоадера и его отсутствия
+Шаг делает правый клик по папке и выбирает элемент Delete, проверяет лоадер и его отсутствие
 
 ### 1.5. * Rename the model from "ModelName" to "NewModelName"
 Переименовывает модель на странице Drive Landing
@@ -51,11 +51,14 @@
 ```
 
 ### 1.8. * Model "ModelName" (online|offline) status switch
-Меняет статус модели
+Переводит модель в онлайн/оффлайн
 ```
 * Model "E2E model is offline" online status switch
 * Model "E2E model is offline" offline status switch
 ```
+
+### 1.9. * Clean temp models in current workspace
+Удаляет временные модели в текущей рабочей области
 
 ## 2. Проверка элементов
 
@@ -67,15 +70,17 @@
 ```
 
 ### 2.2. * Check if the style in "Selector" matches "Style"
-Проверяет стиль заданной ячейки
+Проверяет, что у заданного селектора в классе содержится определенный текст
 ```
 * Check if the style in "Grid Cell(0:14)" matches "summary1"
+* Check if the style in "Checkbox(Select All)" matches "partially"
 ```
 
 ### 2.3. * Check if the style in "Selector" does not match "Style"
-Проверяет отсутствие стиля заданной ячейки
+Проверяет,что у заданного селектора в классе отсутствует определенный текст 
 ```
 * Check if the style in "Grid Cell(0:13)" does not match "heading1"
+* Check if the style in "Checkbox(Select All)" does not match "partially"
 ```
 
 ### 2.4. * Check if the input value in "Selector" equals to:
@@ -160,7 +165,7 @@
 ```
 
 ### 2.15. * Compare "Selector" with "File.png"
-Сравнивает скриншот элемента с файлом. Файл создается при первом запуске теста в Дженкинсе и сохраняется в папке Reports > screenshots. Его нужно скачать в отчете переместить в папку Screenshots в редакторе кода
+Сравнивает скриншот элемента с файлом. Файл создается при первом запуске теста на сервере и сохраняется в папке Reports - screenshots. Его нужно скачать в отчете переместить в папку features/fixtures/screenshots
 ```
 * Compare "Card Of Dashboards(Cube Заявки)" with "dashboard-screenshot.png"
 ```
@@ -174,19 +179,9 @@
 ```
 
 ### 3.2. * Release the mouse button at "Selector"
-Отпускает зажатую ранее левую клавишу мыши
+Перемещает курсор мыши на элемент с указанными координатами/названием/именем отпускает зажатую ранее левую клавишу мыши
 ```
 * Release the mouse button at "Grid Cell(3:4)"
-```
-Этот шаг используется с шагом 3.1. обычно для того, чтобы выделить несколько ячеек, колонок или строк
-```
-* Press and hold down the mouse button at "Row Header(0:-1)"
-* Release the mouse button at "Row Header(3:-1)"
-```
-После этих шагов нужно проверять, что объекты выделены
-```
-* Check if "Selection Row Headers(0:-1; 1:-1; 2:-1; 3:-1)" exists
-* Check if "Only Selection Row Headers(0:-1; 1:-1; 2:-1; 3:-1)" exists
 ```
 
 ### 3.3. * Set "Value" of the cell at the intersection of "CollName" and "RowName" without updating the cell
@@ -212,22 +207,23 @@
 ```
 * Drag "Zoom Slider" and set the value equal to [1]
 ```
-### 6.3. * Model last back up restore
-Восстановление последней резервной копии модели
 
 ### 3.7. * Clean temp models in current workspace
 Очистка временных моделей на странице Drive Landing
 
-### 3.8. * Remove hash from the url
+### 3.8. * Model last back up restore
+Восстановление последней резервной копии модели
+
+### 3.9. * Remove hash from the url
 Удаляет хэш из url после id модели
 
-### 3.9. * Insert "Text" after hash in the url
+### 3.10. * Insert "Text" after hash in the url
 Вставляет дополнительный хеш в адресную строку браузера после ID модели и символа #. Применяется для тестирования роутинга
 ```
 * Insert "eyJ0eXBlIjoiVmlld1RhYlN0YXRlIiwicGFyYW1zIjp7" after hash in the url
 ```
 
-### 3.10. * Set the viewport width to [Pixels] and set the height to [Pixels] pixels
+### 3.11. * Set the viewport width to [Pixels] and set the height to [Pixels] pixels
 Устанавливает размер страницы
 ```
 * Set viewport width [1366] and height [620] pixels

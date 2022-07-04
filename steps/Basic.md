@@ -35,25 +35,22 @@
 Переходит на страницу Drive Landing
 
 ### 1.7. * Go to page Contents Page
-Переходит страницу Contents Page
+Переходит на страницу Contents Page, с перезагрузкой приложения
 
-### 1.8. * Clean temp models in current workspace
-Удаляет временные модели в текущей рабочей области
-
-### 1.9. * Open tab "ModuleName"
+### 1.8. * Open tab "ModuleName"
 Переходит на страницу Contents и открывает вкладку с указанным именем
 
-### 1.10. * Close tab "ModuleName"
+### 1.9. * Close tab "ModuleName"
 Закрывает вкладку с указанным именем
 ```
 * Close tab "Заявки"
 * Close tab "Main Dashboard"
 ```
 
-### 1.11. * Reload Page
-Перезагружает страницу (браузер). Шаг включает в себя проверку существования глобального лоадера и дожидается отсутствия лоадеров
+### 1.10. * Reload Page
+Перезагружает страницу браузера. Шаг включает в себя проверку существования глобального лоадера и дожидается отсутствия лоадеров
 
-### 1.12. * Wait until the modal form is open
+### 1.11. * Wait until the modal form is open
 Ожидает открытие модального окна и проверяет отсутствие лоадера
 
 
@@ -321,13 +318,13 @@
 ```
 
 ### 5.9. * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement"
-Наводит курсор мыши на элемент в Header Menu и делает клик левой кнопкой мыши по элементу, расположенному во втором уровне Header Menu
+Наводит курсор мыши на элемент первого уровня в Header Menu и делает клик левой кнопкой мыши по элементу, расположенному во втором уровне Header Menu
 ```
 * Click on "Header Menu Element(1.1 Countries)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Lists)"
 ```
 
 ### 5.10. * Click on "HeaderMenuElement" in "HeaderMenu" in "HeaderMenuElement" in "HeaderMenuElement"
-Делает клик левой кнопкой мыши по элементу, расположенному в Header Menu третьего уровня
+Наводит курсор мыши на элемент первого уровня в Header Menu, затем наводит курсор мыши на элемент второго уровня и делает клик левой кнопкой мыши по элементу, расположенному в третьем уровне Header Menu
 ```
 * Click on "Header Menu Element(Add Subset in Quarters)" in "Header Menu Element(Dimensions)" in "Header Menu Element(Time)" in "Header Menu Element(Quarters)"
 ```
@@ -481,19 +478,20 @@
 ```
 Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets) with Names" - это множественный именованный инсерт, вводит название элементов в поле Textarea, выбирает позицию в выпадающем списке и нажимает кнопку Ok
 
-### 8.2. * Insert [Number] elements into "Element" at position "start/end/after/before/child of"
+### 8.2. * Insert element "Element" at position "start/before/after/end"
+Добавляет именованный элемент
+```
+* Insert element "Test Subset" at position "Start"
+```
+Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets) with Names" - это множественный именованный инсерт, вводит название элемента в поле Textarea, выбирает позицию в выпадающем списке и нажимает кнопку Ok. Используется для вставки одного элемента
+
+
+### 8.3. * Insert [Number] elements into "Element" at position "start/end/after/before/child of"
 Добавление неименованных элементов
 ```
 * Insert [5] elements into "Lists" at position "after"
 ```
 Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets)" - это множественный **не**именованный инсерт, вводит колличество элементов в input, выбирает позицию в выпадающем списке и нажимает кнопку Ok
-
-### 8.3. * Insert element "Element" at position "start/before/after/end"
-Добавляет именованный элемент
-```
-* Insert element "Test Subset" at position "Start"
-```
-Шаг выполняет несколько итераций: кликает на кнопку "Add (название кнопки, например Subsets) with Names" - это множественный именованный инсерт, вводит название элемента в поле Textarea, выбирает позицию в выпадающем списке и нажимает кнопку Ok
 
 ### 8.4. * Save the current view as "NewViewName"
 Сохраняет новую вьюху
