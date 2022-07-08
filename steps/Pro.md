@@ -170,6 +170,12 @@
 * Compare "Card Of Dashboards(Cube Заявки)" with "dashboard-screenshot.png"
 ```
 
+### 2.16. * Check loaders in Cards "CardName" for [Time] seconds
+Шаг с проверкой отсутствия двойной перезагрузки карточек дашборда
+```
+* Check loaders in Cards "m1 Moths and Заявка | Chart m2 Weeks and Вид Рим filter Times" for [15] seconds
+```
+
 ## 3. Действия с элементами
 
 ### 3.1. * Press and hold down the mouse button at "Selector"
@@ -179,7 +185,7 @@
 ```
 
 ### 3.2. * Release the mouse button at "Selector"
-Перемещает курсор мыши на элемент с указанными координатами/названием/именем отпускает зажатую ранее левую клавишу мыши
+Перемещает курсор мыши на элемент отпускает зажатую ранее левую клавишу мыши
 ```
 * Release the mouse button at "Grid Cell(3:4)"
 ```
