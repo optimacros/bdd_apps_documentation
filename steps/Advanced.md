@@ -1,43 +1,33 @@
 # Advanced-шаги (иногда могут понадобиться)
+[1. Действия с элементами]
+[2. Работа с буфером обмена]
+[3. Проверка существования элементов]
+[4. Шаги связанные с публикацией]
+[5. Прочие шаги]
 
-## 1. Сервисные шаги.
 
-### 1.1. * Close tab "ModuleName"
-Закрывает вкладку с именем.
-```
-* Close tab "Заявки"
-* Close tab "Main Dashboard"
-```
+## 1. Действия с элементами
 
-### 1.2. * Wait [Number] second(s)
-Делает паузу в сценарии.
-```
-* Wait [2] seconds
-* Wait [1] second
-```
-
-## 2. Действия с элементами.
-
-### 2.1. * Click using coordinates "X:Y"
-Делает клик левой клавишей мыши, используя координаты. Чаще применяется для графиков.
+### 1.1. * Click using coordinates "X:Y"
+Делает клик левой кнопкой мыши, используя координаты. Чаще применяется для графиков
 ```
 * Click using coordinates "445:408"
 ```
 
-### 2.2. * Right click using coordinates "X:Y"
-Делает клик правой клавишей мыши, используя координаты. Чаще применяется для графиков.
+### 1.2. * Right click using coordinates "X:Y"
+Делает клик правой кнопкой мыши, используя координаты. Чаще применяется для графиков
 ```
 * Right click using coordinates "696:490"
 ```
 
-### 2.3. * Hover over coordinates "X:Y"
-Наводит курсор мыши на координаты. Обычно применяется в графиках.
+### 1.3. * Hover over coordinates "X:Y"
+Наводит курсор мыши на координаты. Обычно применяется в графиках
 ```
 * Hover over coordinates "150:333"
 ```
 
-### 2.4. * Stretch element "Selector" [Pixels] pixels to the "left/right/top/bottom"
-Растягивает выбранный элемент влево, вправо, вверх или вниз на определенное количество пикселей.
+### 1.4. * Stretch element "Selector" [Pixels] pixels to the "left/right/top/bottom"
+Растягивает выбранный элемент влево, вправо, вверх или вниз на определенное количество пикселей
 ```
 * Stretch element "Dashboard Card With Id Name(textarea4)" [300] pixels to the "left"
 * Stretch element "Col Header(-1:4|May 16)" [30] pixels to the "right"
@@ -45,88 +35,106 @@
 * Stretch element "Row Header(2:-1)" [39] pixels to the "bottom"
 ```
 
-### 2.5. * Open cells settings at position “X:Y”
+### 1.5. * Open cells settings at position “X:Y”
 Открывает cells settings в ячейке с позицией X Y
 ```
 * Open cells settings at position “3:1”
 ```
 
-## 3. Работа с Буфером Обмена.
+## 2. Работа с Буфером Обмена
 
-### 3.1. * Clear Clipboard
+### 2.1. * Clear Clipboard
 Очищает буфер обмена.
 
-### 3.2. * Check if the clipboard contains "Text"
-Проверяет что буфер обмена содержит текст.
+### 2.2. * Check if the clipboard contains "Text"
+Проверяет что буфер обмена содержит текст
 ```
 * Check if the clipboard contains "13.12.2019"
 ```
 
-### 3.3. * Check if the clipboard does not contain "Text"
-Проверяет что буфер обмена не содержит текст.
+### 2.3. * Check if the clipboard does not contain "Text"
+Проверяет что буфер обмена не содержит текст
 ```
 * Check if the clipboard does not contain "Forecast"
 ```
 
-### 3.4. * Check if the clipboard is empty
-Проверяет что буфер обмена пустой.
+### 2.4. * Check if the clipboard is empty
+Проверяет что буфер обмена пустой
 
-### 3.5. * Paste from clipboard
-Вставляет данные из буфера обмена.
+### 2.5. * Paste from clipboard
+Вставляет данные из буфера обмена
 
-### 3.6. * Copy data from "f:File.csv" to clipboard
-Копирует в буфер обмена данные из файла csv.
+### 2.6. * Copy data from "f:File.csv" to clipboard
+Копирует в буфер обмена данные из файла csv
 ```
 * Copy data from "f:TestEditableModuleData.csv" to clipboard
 ```
 
-### 3.7. * Copy to clipboard:
-Копирует в буфер обмена значения таблицы.
+### 2.7. * Copy to clipboard:
+Копирует в буфер обмена значения таблицы
 ```
 * Copy to clipboard:
 | 100    | 200     | 300     |
 | Text 1 | Text 2  | Text 3  |
 ```
 
-### 3.8. * Copy selection to the clipboard
-Копирует выделенное в буфер обмена.
+### 2.8. * Copy selection to the clipboard
+Копирует выделенное в буфер обмена
 
-### 3.9. * Fill the cells with data from the clipboard
-Вставляет в ячейки данные из буфера обмена и ожидает появление данных в ячейках.
+### 2.9. * Fill the cells with data from the clipboard
+Вставляет в ячейки данные из буфера обмена и ожидает появление данных в ячейках
 
-### 3.10. * Fill the cells with data from the clipboard without waiting
-Вставляет в ячейки данные из буфера обмена без ожидания появления данных в ячейках.
+### 2.10. * Fill the cells with data from the clipboard without waiting
+Вставляет в ячейки данные из буфера обмена без ожидания появления данных в ячейках
 
-### 3.11. * Fill the grid with data from "f:File.csv"
-Вставка в грид данных из файла csv.
+### 2.11. * Fill the grid with data from "f:File.csv"
+Вставка в грид данных из файла csv
 
-## 4. Проверка существования элементов.
+## 3. Проверка существования элементов
 
-### 4.1. * Check if "Selector" exists for a long time
-Проверяет существование элемента на странице. В этом шаге увеличен таймаут до 180 секунд.
+### 3.1. * Check if "Selector" exists for a long time
+Проверяет существование элемента на странице. В этом шаге увеличен таймаут появления элемента до 180 секунд
 ```
 * Check if "Filter(Total Company)" exists for a long time
 ```
 
-### 4.2. * Check if "Selector" does not exist for a long time
-Проверяет отсутствие элемента на странице. В этом шаге увеличен таймаут до 180 секунд.
+### 3.2. * Check if "Selector" does not exist for a long time
+Проверяет отсутствие элемента на странице. В этом шаге увеличен таймаут до 180 секунд
 ```
 * Check if "Global Loader" doesn't exist for a long time
 ```
 
-### 4.3. * Check if the value is empty in "Selector"
-Проверяет что в инпут не введено никаких значений.
+### 3.3. * Check if "Selector" exists now
+Проверяет присутствие элемента в данный момент времени
+```
+* Check if "Card Of Dashboards(Chart m3 filter List) > Loader" exists now
+```
+
+### 3.4. * Check if "Selector" does not exist now
+Проверяет, что элемент отсутствует в данный момент времени
+```
+* Check if "Grid > Loader" does not exist now
+```
+
+### 3.5. *Check if "Selector" does not exist for [Number] seconds
+Проверяет, что элемент отсутствует в течении определенного времени
+```
+* Check if "Any Loader" does not exist for [1] second
+```
+
+### 3.6. * Check if the value is empty in "Selector"
+Проверяет что в инпут не введено никаких значений
 ```
 * Check if the value is empty in "Formula Input"
 ```
 
-### 4.4. * Сheck if "Selector" is checked
+### 3.7. * Сheck if "Selector" is checked
 ### * Сheck if "Selector" is not checked
 ### * Сheck if "Selector" is disabled
 ### * Сheck if "Selector" is not disabled
 ### * Сheck if "Selector" is active
 ### * Сheck if "Selector" is selected
-Шаги проверяют свойства элементов.
+Шаги проверяют свойства элементов
 ```
 * Сheck if "GridCell(4:2) > Checkbox" is checked
 * Сheck if "Modal > Checkbox(summaries)" is not checked
@@ -136,28 +144,87 @@
 * Сheck if "Modal > Tree Menu Element(test property for update)" is selected
 ```
 
-## 5. Прочие шаги.
+## 4. Шаги связанные с публикацией
+
+### 4.1 * Publish the current chart to dashboard "dashboardName"
+Публикует график на указанный Дашборд
+Шаг включает в себя нажатие на кнопку View в модальном окне с графиком и выбор указанного Дашборда в дропдауне Publish to Dashboard выбирает указанный Дашборд
+Проверяет глобальный лоадер
+```
+* Publish the current chart to dashboard "Chart Dashboard"
+```
+Когда лоадер не появляется при публикации используем шаг:
+```
+* Publish the current chart to dashboard "Chart Dashboard" without loader
+```
+
+### 4.2 * Publish the current chart to context table "contextTableName"
+Публикует график на указанную контекстную таблицу
+Шаг включает в себя нажатие на кнопку View в модальном окне с графиком и выбор указанной контекстной таблицы в дропдауне Publish to Context Table 
+Проверяет глобальный лоадер
+```
+* Publish the current chart to context table "CT for test"
+```
+Когда лоадер не появляется при публикации используем шаг:
+```
+* Publish the current chart to context table "CT for test" without loader
+```
+
+### 4.3 * Publish the current view to dashboard "dashboardName"
+Публикует текущее представление на указанный Дашборд
+Можно опубликовать любой объект измерения (справочник, версии, время, выборку кубов), мультикуб, контекстную таблицу и т.д
+Шаг включает в себя нажатие на кнопку View и в дропдауне Publish to Dashboard выбирает указанный Дашборд. Проверяет глобальный лоадер
+```
+* Publish the current view to dashboard "Main Dashboard"
+```
+Когда лоадер не появляется при публикации используем шаг:
+```
+* Publish the current view to dashboard "Main Dashboard" without loader
+```
+
+### 4.4 * Publish the current view to context table "contextTableName"
+Публикует текущее представление на указанную контекстную таблицу
+Можно опубликовать любой объект измерения (справочник, версии, время, выборку кубов), мультикуб, кубы и т.д
+Шаг включает в себя нажатие на кнопку View и в дропдауне Publish to Context Table выбирает указанную контекстную таблицу. Проверяет глобальный лоадер
+```
+* Publish the current view to context table "Ввод заявок 2"
+```
+Когда лоадер не появляется при публикации используем шаг:
+```
+* Publish the current view to context table "Ввод заявок 2" without loader
+```
+
+## 5. Прочие шаги
 
 ### 5.1. * Delete view "ViewName"
-Удаляет вьюху с именем. Шаг нажмает на кнопку View > Manage Views, в модалке выбирается вьюха и нажимается кнопка Delete и Ok.
+Удаляет вьюху с именем
 ```
 * Delete view "Test View Tab"
 ```
+ Шаг нажмает на кнопку View и Manage Views, в модальном окне выбирается вьюха и нажимается кнопка Delete и Ok
 
 ### 5.2. * Delete "Element"
-Удаляет элемент с помощью кнопки Delete на тулбаре.
+Удаляет элемент с помощью кнопки Delete на тулбаре
 ```
 * Delete "List 01"
 ```
+Шаг включает в себя выделение элемента с указанным именем, нажатие на кнопку Delete на тулбаре, нажатие на кнопку Delete в модальном окне. Затем ожидает отправки формы, проверяет глобальный лоадер и его отсутствие и проверяет, что элемента нет на странице.
 
 ### 5.3. * Run action "NameAction"
-Запуск скрипта с помощью кнопки Run на тулбаре.
+Запуск скрипта с помощью кнопки Run на тулбаре
 ```
 * Run action "Default Action"
 ```
 
 ### 5.4. * Submit the form
-Нажимает на кнопку Submit в модальном окне.
+Нажимает на кнопку Submit в модальном окне
+
+### 5.5. * Wait [Number] second(s)
+Делает паузу в сценарии
+```
+* Wait [2] seconds
+* Wait [1] second
+```
 
 
 [Описание типовых шагов](./prerequisities.md)
